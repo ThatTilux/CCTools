@@ -36,6 +36,15 @@ find_package(ZLIB REQUIRED)
 # Get all source files in src directory
 file(GLOB SOURCES "src/*.cpp")
 
+# Create public library
+add_library(CCTools STATIC ${BUILDING_BLOCK_SOURCES})
+
+# Specify include directories for consumers
+target_include_directories(CCTools PUBLIC
+    $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+    $<INSTALL_INTERFACE:include>
+)
+
 # Google Test integration
 # Download and unpack googletest at configure time
 configure_file(googletest-download/CMakeLists.txt.in googletest-download/CMakeLists.txt)
