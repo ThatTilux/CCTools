@@ -27,8 +27,6 @@ find_package(Armadillo REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem)
 
 
-
-
 # find ZLIB
 if(POLICY CMP0074)
 cmake_policy(SET CMP0074 NEW)
@@ -78,11 +76,11 @@ file(GLOB TEST_SOURCES "test/*.cpp")
 enable_testing()
 
 # Create the test executable
-add_executable(runTests ${SOURCES} ${TEST_SOURCES})
-target_link_libraries(runTests PRIVATE gtest_main CCTools)
+add_executable(cctools_test ${SOURCES} ${TEST_SOURCES})
+target_link_libraries(cctools_test PRIVATE gtest_main CCTools)
 
 # Add tests
-add_test(NAME runTests COMMAND runTests)
+add_test(NAME cctools_test COMMAND cctools_test)
 
 # Suppress DartConfiguration.tcl warnings
 set(CMAKE_SUPPRESS_REGENERATION true)
