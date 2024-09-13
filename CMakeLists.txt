@@ -37,7 +37,7 @@ find_package(ZLIB REQUIRED)
 file(GLOB SOURCES "src/*.cpp")
 
 # Create public library
-add_library(CCTools STATIC ${BUILDING_BLOCK_SOURCES})
+add_library(CCTools STATIC ${SOURCES})
 
 # Specify include directories for consumers
 target_include_directories(CCTools PUBLIC
