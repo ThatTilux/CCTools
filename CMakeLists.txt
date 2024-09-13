@@ -1,5 +1,6 @@
 cmake_minimum_required(VERSION 3.11 FATAL_ERROR)
 project(CCTools VERSION 1.0.0 LANGUAGES CXX)
+include(FetchContent)
 
 # Set C++ standard
 set(CMAKE_CXX_STANDARD 17)
@@ -26,6 +27,8 @@ find_package(Armadillo REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem)
 
 
+
+
 # find ZLIB
 if(POLICY CMP0074)
 cmake_policy(SET CMP0074 NEW)
@@ -33,37 +36,40 @@ endif()
 
 find_package(ZLIB REQUIRED)
 
+# find jsoncpp
+FetchContent_Declare(
+  jsoncpp
+  GIT_REPOSITORY https://github.com/open-source-parsers/jsoncpp.git
+  GIT_TAG        1.9.6 
+)
+
+FetchContent_MakeAvailable(jsoncpp)
+
 # Get all source files in src directory
 file(GLOB SOURCES "src/*.cpp")
 
 # Create public library
 add_library(CCTools STATIC ${SOURCES})
+target_link_libraries(CCTools PUBLIC Rat::Models armadillo Boost::filesystem jsoncpp_lib ZLIB::ZLIB)
 
 # Specify include directories for consumers
 target_include_directories(CCTools PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
+    $<BUILD_INTERFACE:${jsoncpp_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 
-# Google Test integration
-# Download and unpack googletest at configure time
-configure_file(googletest-download/CMakeLists.txt.in googletest-download/CMakeLists.txt)
-execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
-RESULT_VARIABLE result
-WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download)
-if(result)
-message(FATAL_ERROR "CMake step for googletest failed: ${result}")
-endif()
-execute_process(COMMAND ${CMAKE_COMMAND} --build .
-RESULT_VARIABLE result
-WORKING_DIRECTORY ${CMAKE_BINARY_DIR}/googletest-download)
-if(result)
-message(FATAL_ERROR "Build step for googletest failed: ${result}")
-endif()
 
-# Add googletest directly to our build. This defines the gtest and gtest_main targets.
-add_subdirectory(${CMAKE_BINARY_DIR}/googletest-src
-${CMAKE_BINARY_DIR}/googletest-build)
+# Google Test integration
+# Fetch Googletest
+FetchContent_Declare(
+  googletest
+  GIT_REPOSITORY https://github.com/google/googletest.git
+  GIT_TAG        release-1.12.1  # Specify the version you need
+)
+set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+FetchContent_MakeAvailable(googletest)
+
 
 # Get all test files in test directory
 file(GLOB TEST_SOURCES "test/*.cpp")
@@ -73,7 +79,7 @@ enable_testing()
 
 # Create the test executable
 add_executable(runTests ${SOURCES} ${TEST_SOURCES})
-target_link_libraries(runTests PRIVATE gtest_main Rat::Models armadillo Boost::filesystem)
+target_link_libraries(runTests PRIVATE gtest_main CCTools)
 
 # Add tests
 add_test(NAME runTests COMMAND runTests)
