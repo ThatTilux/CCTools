@@ -26,3 +26,7 @@ googletest-download/
 # Ignore data
 data/*
 !data/.gitkeep
+
+# Ignore docs
+docs
+Doxyfile

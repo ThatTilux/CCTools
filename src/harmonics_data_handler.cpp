@@ -84,8 +84,9 @@ std::vector<double> HarmonicsDataHandler::get_bn()
     return bn_;
 }
 
-// function for getting the an data for all components. 
-std::vector<double> HarmonicsDataHandler::get_an(){
+// function for getting the an data for all components.
+std::vector<double> HarmonicsDataHandler::get_an()
+{
     return an_;
 }
 
@@ -147,7 +148,6 @@ std::tuple<std::vector<double>, std::vector<std::vector<double>>> HarmonicsDataH
 
     return {ell_vector, all_Bn};
 }
-
 
 // Function to combine x and y points into a vector of pairs
 std::vector<std::pair<double, double>> combinePoints(const std::vector<double> &x, const std::vector<double> &y)

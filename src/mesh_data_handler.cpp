@@ -62,7 +62,6 @@ void MeshDataHandler::get_z(rat::mdl::ShMeshDataPr mesh_data, arma::field<arma::
     arma::uword num_edges;
 
     mesh_data->create_xyz(x, y, z, num_edges);
-
 }
 
 rat::mdl::ShMeshDataPr MeshDataHandler::getMeshData(int index)
