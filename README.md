@@ -1,9 +1,18 @@
 # CCTools
 
-CCTools is a C++ library designed to simplify the development of canted-cosine-theta (CCT) magnets by extending the open-source [RAT-Library](https://gitlab.com/Project-Rat). It provides classes for parsing magnet models in JSON format, performing computations, and modifying the models, facilitating efficient magnet design and analysis.
+The CCTools Library in C++ extends the [RAT-Library](https://gitlab.com/Project-Rat) by providing tools to facilitate the workflow of programatically doing computations on canted-cosine-theta (CCT) magnet models defined in JSON. 
+This library can be used for CCT magnet models in the JSON format created using the [RAT-GUI](https://rat-gui.com/index.html) or RAT-Library.
+Special focus is on manipulating the so-called custom CCT harmonics of the CCT magnet.
 
 This project is part of the FCC-ee HTS4 research project at CERN.
 
+## Features
+
+### Main Classes
+
+- **ModelHandler**: Provides functions to manipulate a magnet model JSON file, including extracting and modifying drive values for custom CCT harmonics.
+
+- **ModelCalculator**: Runs computations on a magnet model, including harmonics and mesh calculations, providing results through simplified handler classes.
 
 ## Prerequisites
 
