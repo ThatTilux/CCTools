@@ -1,0 +1,26 @@
+/**
+ * @mainpage CCTools
+ *
+ * The CCTools Library extends the [RAT-Library](https://gitlab.com/Project-Rat) by providing tools to facilitate the workflow of programatically doing computations on canted-cosine-theta (CCT) magnet models defined in JSON. 
+ * This library can be used for CCT magnet models in the JSON format created using the [RAT-GUI](https://rat-gui.com/index.html) or RAT-Library.
+ *
+ * Special focus is on manipulating the so-called custom CCT harmonics of the CCT magnet.
+ *
+ * ## Main Classes
+ *
+ * - [ModelHandler](classModelHandler.html): Provides functions to manipulate a magnet model JSON file, including extracting and modifying drive values for custom CCT harmonics.
+ *
+ * - [ModelCalculator](classModelCalculator.html): Runs computations on a magnet model, including harmonics and mesh calculations, providing results through simplified handler classes.
+ *
+ * ## Supporting Classes
+ *
+ * - [HarmonicDriveParameters](structHarmonicDriveParameters.html): Stores the harmonic drive parameters for a custom CCT harmonic, supporting different parameter types.
+ *
+ * - [HarmonicsDataHandler](classHarmonicsDataHandler.html): Handles the results of harmonics calculations, providing functions to extract information from raw harmonics data.
+ *
+ * - [MeshDataHandler](classMeshDataHandler.html): Handles the results of mesh calculations, providing functions to extract information from raw mesh data.
+ *
+ * - [Logger](classLogger.html): Singleton class to log messages to the console and a log file, supporting different log levels and formats.
+ *
+ * - [Constants](constants_8h.html): Defines constant values used throughout the library, such as directory paths.
+ */
