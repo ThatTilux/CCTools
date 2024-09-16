@@ -14,7 +14,14 @@ This project is part of the FCC-ee HTS4 research project at CERN.
 
 - **ModelCalculator**: Runs computations on a magnet model, including harmonics and mesh calculations, providing results through simplified handler classes.
 
+## Documentation
+The documentation of this library can be viewed [here](https://thattilux.github.io/CCTools/).
+Additionally, example code showcasing core functionalities is located at `examples/example.cpp`.
+
+More sophisticated examples can be found in the repository [CCT-Harmonics-Optimizer](https://github.com/ThatTilux/CCT-Harmonics-Optimizer), an open-source project utilizing this library. 
+
 ## Prerequisites
+**Note: This software has only been tested on Linux.**
 
 Before using CCTools, ensure that your system meets the following requirements.
 
