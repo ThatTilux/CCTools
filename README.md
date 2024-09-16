@@ -47,7 +47,7 @@ Follow the [RAT documentation](https://gitlab.com/Project-Rat/rat-documentation)
 ## Installation
 ### Using CCTools in your project
 
-To incorporate CCTools into your C++ project, follow these steps.
+To incorporate CCTools into your C++ project, follow these steps. Make sure you have followed the **Prerequisites** section.
 
 1. **Include CCTools in `CMakeLists.txt`:**
 
@@ -99,6 +99,13 @@ Please note that this step is  **not required** to use this library in your C++ 
 2. **Run Tests:**
     ```sh
     ./bin/cctools_test
+    ```
+
+3. **Run the Example:**
+
+   There is an example file `examples/example.cpp` showcasing how to use core features of this library.
+   ```sh
+    ./bin/cctools_example
     ```
 
 ## Author

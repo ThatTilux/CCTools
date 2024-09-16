@@ -10,7 +10,7 @@ set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
 # Set build type
 if(NOT CMAKE_BUILD_TYPE)
-set(CMAKE_BUILD_TYPE Debug)
+    set(CMAKE_BUILD_TYPE Debug)
 endif()
 
 # Set output directories
@@ -26,21 +26,18 @@ find_package(RatModels 2.017.7 REQUIRED)
 find_package(Armadillo REQUIRED)
 find_package(Boost REQUIRED COMPONENTS filesystem)
 
-
-# find ZLIB
+# Find ZLIB
 if(POLICY CMP0074)
-cmake_policy(SET CMP0074 NEW)
+    cmake_policy(SET CMP0074 NEW)
 endif()
-
 find_package(ZLIB REQUIRED)
 
-# find jsoncpp
+# Fetch jsoncpp
 FetchContent_Declare(
-  jsoncpp
-  GIT_REPOSITORY https://github.com/open-source-parsers/jsoncpp.git
-  GIT_TAG        1.9.6 
+    jsoncpp
+    GIT_REPOSITORY https://github.com/open-source-parsers/jsoncpp.git
+    GIT_TAG        1.9.6 
 )
-
 FetchContent_MakeAvailable(jsoncpp)
 
 # Get all source files in src directory
@@ -57,17 +54,14 @@ target_include_directories(CCTools PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-
 # Google Test integration
-# Fetch Googletest
 FetchContent_Declare(
-  googletest
-  GIT_REPOSITORY https://github.com/google/googletest.git
-  GIT_TAG        v1.15.2
+    googletest
+    GIT_REPOSITORY https://github.com/google/googletest.git
+    GIT_TAG        v1.15.2
 )
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 FetchContent_MakeAvailable(googletest)
-
 
 # Get all test files in test directory
 file(GLOB TEST_SOURCES "test/*.cpp")
@@ -87,3 +81,19 @@ set(CMAKE_SUPPRESS_REGENERATION true)
 
 # Disable CDash
 set(CTEST_USE_LAUNCHERS OFF)
+
+# ----------------------------------------
+# Add example executable (only when building this project)
+# ----------------------------------------
+if(CMAKE_CURRENT_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
+    # Create the example executable
+    add_executable(cctools_example examples/example.cpp)
+    
+    # Link the example executable with the CCTools library
+    target_link_libraries(cctools_example PRIVATE CCTools)
+    
+    # Specify include directories for the example
+    target_include_directories(cctools_example PRIVATE
+        ${PROJECT_SOURCE_DIR}/include
+    )
+endif()
