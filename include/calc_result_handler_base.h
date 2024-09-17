@@ -1,5 +1,7 @@
-#ifndef CALC_RESULT_HANDLER_BASE_H
-#define CALC_RESULT_HANDLER_BASE_H
+#ifndef CCTOOLS_CALC_RESULT_HANDLER_BASE_H
+#define CCTOOLS_CALC_RESULT_HANDLER_BASE_H
+
+namespace CCTools {
 
 /**
  * @class CalcResultHandlerBase
@@ -12,4 +14,6 @@ class CalcResultHandlerBase
 {
 };
 
-#endif // CALC_RESULT_HANDLER_BASE_H
+}; // namespace CCTools
+
+#endif // CCTOOLS_CALC_RESULT_HANDLER_BASE_H
