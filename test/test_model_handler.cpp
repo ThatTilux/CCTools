@@ -131,6 +131,87 @@ TEST_F(ModelHandlerTest, SetHarmonicDriveValueLinear)
     EXPECT_TRUE(containsParameterValue(harmonic_drive_values, "B5", HarmonicDriveParameterType::Offset, 2.23456789, 1e-6));
 }
 
+// Test the setValueByName and getValueByName methods
+TEST_F(ModelHandlerTest, SetValueByNameAndGetValueByName)
+{
+    ModelHandler handler(test_file);
+    Json::Value value;
+
+    // Test case 1: No children specified - Change a boolean value
+    ASSERT_NO_THROW({
+        handler.setValueByName("Mesh", {}, "enable", Json::Value(false));
+    });
+
+    ASSERT_NO_THROW({
+        value = handler.getValueByName("Mesh", {}, "enable");
+    });
+
+    EXPECT_TRUE(value.isBool());
+    EXPECT_FALSE(value.asBool());
+
+    // Reset value back to true for other tests
+    ASSERT_NO_THROW({
+        handler.setValueByName("Mesh", {}, "enable", Json::Value(true));
+    });
+
+    // Test case 2: One child - Change a numeric value
+    ASSERT_NO_THROW({
+        handler.setValueByName("custom cct outer", {"rho"}, "radius", Json::Value(0.5));
+    });
+
+    ASSERT_NO_THROW({
+        value = handler.getValueByName("custom cct outer", {"rho"}, "radius");
+    });
+
+    EXPECT_TRUE(value.isNumeric());
+    EXPECT_DOUBLE_EQ(value.asDouble(), 0.5);
+
+    // Test case 3: Multiple children - Change a value deep in the hierarchy
+    ASSERT_NO_THROW({
+        handler.setValueByName("B4", {"harmonic_drive"}, "scaling", Json::Value(1.23456789));
+    });
+
+    ASSERT_NO_THROW({
+        value = handler.getValueByName("B4", {"harmonic_drive"}, "scaling");
+    });
+
+    EXPECT_TRUE(value.isNumeric());
+    EXPECT_DOUBLE_EQ(value.asDouble(), 1.23456789);
+
+    // Test case 4: Set a string value
+    ASSERT_NO_THROW({
+        handler.setValueByName("B4", {}, "name", Json::Value("NewName"));
+    });
+
+    ASSERT_NO_THROW({
+        value = handler.getValueByName("NewName", {}, "name");
+    });
+
+    EXPECT_TRUE(value.isString());
+    EXPECT_EQ(value.asString(), "NewName");
+
+    // Test case 7: Attempt to set a value where the target does not exist
+    ASSERT_THROW({
+        handler.setValueByName("Mesh", {}, "nonexistent_field", Json::Value("value"));
+    }, std::runtime_error);
+
+    // Test case 8: Attempt to get a value where the target does not exist
+    ASSERT_THROW({
+        value = handler.getValueByName("Mesh", {}, "nonexistent_field");
+    }, std::runtime_error);
+
+    // Test case 9: Attempt to set a value where the name does not exist
+    ASSERT_THROW({
+        handler.setValueByName("NonexistentName", {}, "enable", Json::Value(false));
+    }, std::runtime_error);
+
+    // Test case 10: Attempt to get a value where the name does not exist
+    ASSERT_THROW({
+        value = handler.getValueByName("NonexistentName", {}, "enable");
+    }, std::runtime_error);
+}
+
+
 // Test to ensure that no files in test_data directory are modified after tests
 TEST_F(ModelHandlerTest, NoModificationOfOriginalFiles)
 {
