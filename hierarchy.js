@@ -1,6 +1,6 @@
 var hierarchy =
 [
-    [ "CalcResultHandlerBase", "classCalcResultHandlerBase.html", [
+    [ "CCTools::CalcResultHandlerBase", "classCCTools_1_1CalcResultHandlerBase.html", [
       [ "CCTools::HarmonicsDataHandler", "classCCTools_1_1HarmonicsDataHandler.html", null ],
       [ "CCTools::MeshDataHandler", "classCCTools_1_1MeshDataHandler.html", null ]
     ] ],

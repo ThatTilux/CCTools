@@ -1,5 +1,6 @@
 var namespaceCCTools =
 [
+    [ "CalcResultHandlerBase", "classCCTools_1_1CalcResultHandlerBase.html", null ],
     [ "HarmonicDriveParameters", "structCCTools_1_1HarmonicDriveParameters.html", "structCCTools_1_1HarmonicDriveParameters" ],
     [ "HarmonicsDataHandler", "classCCTools_1_1HarmonicsDataHandler.html", "classCCTools_1_1HarmonicsDataHandler" ],
     [ "Logger", "classCCTools_1_1Logger.html", null ],

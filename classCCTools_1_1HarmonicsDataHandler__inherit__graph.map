@@ -1,4 +1,4 @@
 <map id="CCTools::HarmonicsDataHandler" name="CCTools::HarmonicsDataHandler">
 <area shape="rect" id="node1" title="Class for handling the result of a harmonics calculation." alt="" coords="5,80,239,107"/>
-<area shape="rect" id="node2" href="$classCalcResultHandlerBase.html" title="Abstract base class for calculation result handling." alt="" coords="35,5,209,32"/>
+<area shape="rect" id="node2" href="$classCCTools_1_1CalcResultHandlerBase.html" title="Abstract base class for calculation result handling." alt="" coords="5,5,239,32"/>
 </map>
