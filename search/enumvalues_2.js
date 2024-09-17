@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['slope_150',['Slope',['../structHarmonicDriveParameters.html#a4d1fd8463886ebbf4aa42fe57cb93b74afe1675056fb642e9a2532abeb8428889',1,'HarmonicDriveParameters::Slope()'],['../model__handler_8h.html#a085bca8c2d4b87d75bd415908a934e21afe1675056fb642e9a2532abeb8428889',1,'Slope():&#160;model_handler.h']]]
+  ['slope_151',['Slope',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aafe1675056fb642e9a2532abeb8428889',1,'CCTools::HarmonicDriveParameters::Slope()'],['../namespaceCCTools.html#a741d61f67f412eed6e57c35a99402daeafe1675056fb642e9a2532abeb8428889',1,'CCTools::Slope()']]]
 ];

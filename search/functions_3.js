@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['enable_5ftrace_101',['enable_trace',['../classLogger.html#acde459e93dc12830f4e9eb65a72161a6',1,'Logger']]],
-  ['error_102',['error',['../classLogger.html#aafe8b4f6ed1259fbde150ab59e0785e7',1,'Logger']]]
+  ['enable_5ftrace_102',['enable_trace',['../classCCTools_1_1Logger.html#a8bc6c4cc9143c71181dcae36c7d634c4',1,'CCTools::Logger']]],
+  ['error_103',['error',['../classCCTools_1_1Logger.html#adda30a14e5b91ba231dbbc1e37954858',1,'CCTools::Logger']]]
 ];

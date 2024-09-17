@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['setharmonicdrivevalue_66',['setHarmonicDriveValue',['../classModelHandler.html#a30e8a3460796724a97e35fffda769702',1,'ModelHandler']]],
-  ['setvalue_67',['setValue',['../structHarmonicDriveParameters.html#a8df38652a526963fa2389626b640bf6e',1,'HarmonicDriveParameters']]],
-  ['slope_68',['Slope',['../structHarmonicDriveParameters.html#a4d1fd8463886ebbf4aa42fe57cb93b74afe1675056fb642e9a2532abeb8428889',1,'HarmonicDriveParameters::Slope()'],['../model__handler_8h.html#a085bca8c2d4b87d75bd415908a934e21afe1675056fb642e9a2532abeb8428889',1,'Slope():&#160;model_handler.h']]]
+  ['setharmonicdrivevalue_66',['setHarmonicDriveValue',['../classCCTools_1_1ModelHandler.html#a8ff86be3a7a4c34189ec7b36098df1f0',1,'CCTools::ModelHandler']]],
+  ['setvalue_67',['setValue',['../structCCTools_1_1HarmonicDriveParameters.html#a33f3e05e0a9255560d859afa4c0aaf29',1,'CCTools::HarmonicDriveParameters']]],
+  ['slope_68',['Slope',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aafe1675056fb642e9a2532abeb8428889',1,'CCTools::HarmonicDriveParameters::Slope()'],['../namespaceCCTools.html#a741d61f67f412eed6e57c35a99402daeafe1675056fb642e9a2532abeb8428889',1,'CCTools::Slope()']]]
 ];

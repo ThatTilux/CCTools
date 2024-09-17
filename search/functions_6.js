@@ -1,10 +1,10 @@
 var searchData=
 [
-  ['info_119',['info',['../classLogger.html#a474176e6966186566a2a321cb5cbd739',1,'Logger']]],
-  ['info_5fdouble_120',['info_double',['../classLogger.html#a772d335e1503b0919157b5f661ff3168',1,'Logger']]],
-  ['isconstant_121',['isConstant',['../structHarmonicDriveParameters.html#a109ceb1407b1140a965cb560cb5ea0df',1,'HarmonicDriveParameters']]],
-  ['isoffset_122',['isOffset',['../structHarmonicDriveParameters.html#a2645c4addb3ceb6af4afcc15010ce505',1,'HarmonicDriveParameters']]],
-  ['isoffsetandslope_123',['isOffsetAndSlope',['../structHarmonicDriveParameters.html#adb6542c91c2bc11d1571b40b2d8e8f37',1,'HarmonicDriveParameters']]],
-  ['isslope_124',['isSlope',['../structHarmonicDriveParameters.html#addfffe7fbafdc1eb14cd1aa74d944a49',1,'HarmonicDriveParameters']]],
-  ['istype_125',['isType',['../structHarmonicDriveParameters.html#a7d1a647c9c75d5b2188991fc33ccc63b',1,'HarmonicDriveParameters']]]
+  ['info_120',['info',['../classCCTools_1_1Logger.html#a7e7c2b95c81c8e933abfe04f89b25464',1,'CCTools::Logger']]],
+  ['info_5fdouble_121',['info_double',['../classCCTools_1_1Logger.html#a7a260ee657e971bdbc7563ab7241c71c',1,'CCTools::Logger']]],
+  ['isconstant_122',['isConstant',['../structCCTools_1_1HarmonicDriveParameters.html#a2fd25e37a4a6b63a6e113d940e771311',1,'CCTools::HarmonicDriveParameters']]],
+  ['isoffset_123',['isOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a0f0f1cd4d73dab24b38c4cd128ca0668',1,'CCTools::HarmonicDriveParameters']]],
+  ['isoffsetandslope_124',['isOffsetAndSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a1e83d60aa93b1b5938308e0b48aa6916',1,'CCTools::HarmonicDriveParameters']]],
+  ['isslope_125',['isSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a627eb39f0c1e16a9a3fe8c01ae855b5f',1,'CCTools::HarmonicDriveParameters']]],
+  ['istype_126',['isType',['../structCCTools_1_1HarmonicDriveParameters.html#ab166635095c2f3842b0e09c5df9d3240',1,'CCTools::HarmonicDriveParameters']]]
 ];

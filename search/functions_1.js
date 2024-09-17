@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['calc_5fharmonics_94',['calc_harmonics',['../classModelCalculator.html#a22651404956582addf79e7c5cd97bca0',1,'ModelCalculator']]],
-  ['calc_5fmesh_95',['calc_mesh',['../classModelCalculator.html#ac6a36c34dae788f7dc20309061fc70ef',1,'ModelCalculator']]],
-  ['combinepoints_96',['combinePoints',['../harmonics__data__handler_8cpp.html#a0b83f733fc6e881b0c3deaaca1a7b37f',1,'combinePoints(const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y):&#160;harmonics_data_handler.cpp'],['../harmonics__data__handler_8h.html#a0b83f733fc6e881b0c3deaaca1a7b37f',1,'combinePoints(const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y):&#160;harmonics_data_handler.cpp']]],
-  ['critical_97',['critical',['../classLogger.html#a66f601849d88829ee2c817ea16b30e64',1,'Logger']]]
+  ['calc_5fharmonics_95',['calc_harmonics',['../classCCTools_1_1ModelCalculator.html#ae5845be29d6fd9bfee539619cfd0ec22',1,'CCTools::ModelCalculator']]],
+  ['calc_5fmesh_96',['calc_mesh',['../classCCTools_1_1ModelCalculator.html#afa73847dd6e9170d46e2400d4ffcd4c3',1,'CCTools::ModelCalculator']]],
+  ['combinepoints_97',['combinePoints',['../namespaceCCTools.html#a58a5a099d049882024a0f8d695efc920',1,'CCTools']]],
+  ['critical_98',['critical',['../classCCTools_1_1Logger.html#a6a00deb800cd6a522d3b77e2e1b3eac0',1,'CCTools::Logger']]]
 ];

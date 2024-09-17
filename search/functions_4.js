@@ -1,15 +1,15 @@
 var searchData=
 [
-  ['get_103',['get',['../structHarmonicDriveParameters.html#ad79af8998893d476dfeae2f500b60ad9',1,'HarmonicDriveParameters']]],
-  ['get_5fan_104',['get_an',['../classHarmonicsDataHandler.html#a1df07576a9eb3d41e001e7847a7ca9ef',1,'HarmonicsDataHandler']]],
-  ['get_5faxis_5fell_105',['get_axis_ell',['../classModelCalculator.html#afd8b428808267e2792c798de95cc83f8',1,'ModelCalculator']]],
-  ['get_5faxis_5fz_5fpos_106',['get_axis_z_pos',['../classModelCalculator.html#a3db572b236a0f4fe16225328a028d77f',1,'ModelCalculator']]],
-  ['get_5fbn_107',['get_Bn',['../classHarmonicsDataHandler.html#a1d64a129dc18afbacb2394350c51ee38',1,'HarmonicsDataHandler']]],
-  ['get_5fbn_108',['get_bn',['../classHarmonicsDataHandler.html#a285d381b332715d457375e17f99ada51',1,'HarmonicsDataHandler']]],
-  ['getconstant_109',['getConstant',['../structHarmonicDriveParameters.html#a138b9671a155373382c79544102122fa',1,'HarmonicDriveParameters']]],
-  ['getharmonicdrivevalues_110',['getHarmonicDriveValues',['../classModelHandler.html#a8d2189cd1b6459d29802392f2cfd716b',1,'ModelHandler']]],
-  ['getminmaxzvalues_111',['getMinMaxZValues',['../classMeshDataHandler.html#a8d8bc8e645a787b8a36def54f7fe745a',1,'MeshDataHandler']]],
-  ['getoffset_112',['getOffset',['../structHarmonicDriveParameters.html#a17d02bb8ede474cc267fa00bfbe2d745',1,'HarmonicDriveParameters']]],
-  ['getslope_113',['getSlope',['../structHarmonicDriveParameters.html#adfe2896f873d3bc95a5dbcfbabe1a27e',1,'HarmonicDriveParameters']]],
-  ['gettempjsonpath_114',['getTempJsonPath',['../classModelHandler.html#a4ee143663b2ccc2c41436239ca609c70',1,'ModelHandler']]]
+  ['get_104',['get',['../structCCTools_1_1HarmonicDriveParameters.html#a29b1d6e5d1fc3bcfbcd336aeabcded83',1,'CCTools::HarmonicDriveParameters']]],
+  ['get_5fan_105',['get_an',['../classCCTools_1_1HarmonicsDataHandler.html#ab57635b9561bec6e5ae702029ad2e613',1,'CCTools::HarmonicsDataHandler']]],
+  ['get_5faxis_5fell_106',['get_axis_ell',['../classCCTools_1_1ModelCalculator.html#a30a29f5cdfaac91cc0612c3bc439634c',1,'CCTools::ModelCalculator']]],
+  ['get_5faxis_5fz_5fpos_107',['get_axis_z_pos',['../classCCTools_1_1ModelCalculator.html#a74c11cf4f671ad30139ee44b6053f105',1,'CCTools::ModelCalculator']]],
+  ['get_5fbn_108',['get_Bn',['../classCCTools_1_1HarmonicsDataHandler.html#aaae4182a0df3c5231ea57ff0fa916ba2',1,'CCTools::HarmonicsDataHandler']]],
+  ['get_5fbn_109',['get_bn',['../classCCTools_1_1HarmonicsDataHandler.html#a80ba20245e6e5bb457636b7c48eea2ef',1,'CCTools::HarmonicsDataHandler']]],
+  ['getconstant_110',['getConstant',['../structCCTools_1_1HarmonicDriveParameters.html#af1cc34d4130ce3a13e7c3dd3530d8039',1,'CCTools::HarmonicDriveParameters']]],
+  ['getharmonicdrivevalues_111',['getHarmonicDriveValues',['../classCCTools_1_1ModelHandler.html#a77adb591a0f0659e319663cac0f34a8f',1,'CCTools::ModelHandler']]],
+  ['getminmaxzvalues_112',['getMinMaxZValues',['../classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717',1,'CCTools::MeshDataHandler']]],
+  ['getoffset_113',['getOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a517afddf1f3231698ca615e41a269522',1,'CCTools::HarmonicDriveParameters']]],
+  ['getslope_114',['getSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a85b2416c2dec0a7ba32b6ff548975e1a',1,'CCTools::HarmonicDriveParameters']]],
+  ['gettempjsonpath_115',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]]
 ];
