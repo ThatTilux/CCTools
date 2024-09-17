@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include "calc_result_handler_base.h"
 
 namespace CCTools {
 
@@ -21,7 +22,7 @@ namespace CCTools {
  *
  * This class is used to handle the result of a harmonics calculation. It provides functions to extract information from the raw harmonics data.
  */
-class HarmonicsDataHandler
+class HarmonicsDataHandler : public CalcResultHandlerBase
 {
 public:
     /**

@@ -12,6 +12,7 @@
 #include <string>
 #include <vector>
 #include <filesystem>
+#include "calc_result_handler_base.h"
 
 namespace CCTools {
 
@@ -21,7 +22,7 @@ namespace CCTools {
  * 
  * This class is used to handle the result of a mesh calculation. It provides functions to extract information from the raw mesh data. 
  */
-class MeshDataHandler
+class MeshDataHandler : public CalcResultHandlerBase
 {
 public:
     /**
