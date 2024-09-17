@@ -7,5 +7,6 @@ var annotated_dup =
       [ "MeshDataHandler", "classCCTools_1_1MeshDataHandler.html", "classCCTools_1_1MeshDataHandler" ],
       [ "ModelCalculator", "classCCTools_1_1ModelCalculator.html", "classCCTools_1_1ModelCalculator" ],
       [ "ModelHandler", "classCCTools_1_1ModelHandler.html", "classCCTools_1_1ModelHandler" ]
-    ] ]
+    ] ],
+    [ "CalcResultHandlerBase", "classCalcResultHandlerBase.html", null ]
 ];
