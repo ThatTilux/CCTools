@@ -8,6 +8,8 @@
 #include <sstream>
 #include "model_handler.h"
 
+namespace CCTools {
+
 // Forward declaration of the HarmonicDriveParameterType enum
 enum class HarmonicDriveParameterType;
 
@@ -179,5 +181,7 @@ std::string to_string(const HarmonicDriveParameters &params);
  * Convention is to use the name of the custom cct harmonic as the string key.
  */
 using HarmonicDriveParameterMap = std::unordered_map<std::string, HarmonicDriveParameters>;
+
+} // namespace CCTools
 
 #endif // HARMONIC_DRIVE_PARAMETER_H

@@ -2,6 +2,8 @@
 #include "harmonic_drive_parameter.h"
 #include <stdexcept>
 
+namespace CCTools {
+
 class HarmonicDriveParametersTest : public ::testing::Test {
 protected:
     void SetUp() override {
@@ -119,3 +121,6 @@ TEST_F(HarmonicDriveParametersTest, GetTypeMethod) {
     ASSERT_DOUBLE_EQ(params4.get(HarmonicDriveParameterType::Slope), 0.2);
     ASSERT_THROW(params4.get(HarmonicDriveParameterType::Constant), std::runtime_error);
 }
+
+
+} // namespace CCTools

@@ -1,5 +1,7 @@
 #include "mesh_data_handler.h"
 
+namespace CCTools {
+
 // class for handling the result of a mesh calculation
 
 // dummy constructor
@@ -81,3 +83,5 @@ int MeshDataHandler::getMeshDataSize()
 {
     return mesh_data_.size();
 }
+
+} // namespace CCTools

@@ -14,6 +14,8 @@
 #include <filesystem>
 #include "constants.h"
 
+namespace CCTools {
+
 // Singleton Logger class that will log to both the console and a log file
 
 /**
@@ -266,5 +268,7 @@ private:
     Logger(const Logger &) = delete;
     Logger &operator=(const Logger &) = delete;
 };
+
+} // namespace CCTools
 
 #endif // LOGGER_HH

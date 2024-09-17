@@ -5,6 +5,8 @@
 #include <fstream>
 #include <constants.h>
 
+namespace CCTools {
+
 // Test fixture for ModelHandler tests
 class ModelHandlerTest : public ::testing::Test
 {
@@ -187,3 +189,5 @@ TEST_F(ModelHandlerTest, ApplyParams)
         ASSERT_TRUE(pair.second == params[pair.first]);
     }
 }
+
+} // namespace CCTools

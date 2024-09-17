@@ -3,6 +3,8 @@
 
 #include <string>
 
+namespace CCTools {
+
 // DIRECTORIES
 
 /**
@@ -15,5 +17,6 @@ inline const std::string TEST_DATA_DIR = "../test_data/";
  */
 inline const std::string LOGS_DIR = "../logs/";
 
+} // namespace CCTools
 
 #endif // CONSTANTS_H

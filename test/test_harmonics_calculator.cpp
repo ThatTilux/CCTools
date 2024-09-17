@@ -4,6 +4,8 @@
 #include <boost/filesystem.hpp>
 #include <constants.h>
 
+namespace CCTools {
+
 class HarmonicsCalculatorTest : public ::testing::Test
 {
 protected:
@@ -56,3 +58,5 @@ TEST_F(HarmonicsCalculatorTest, LoadModelFromJsonHandlesNonExistentFile)
     // Ensure that loading a non-existent file does not work
     EXPECT_FALSE(calculator.has_harmonics_calc());
 }
+
+} // namespace CCTools

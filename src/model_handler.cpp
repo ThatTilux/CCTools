@@ -1,6 +1,8 @@
 #include "model_handler.h"
 #include "harmonic_drive_parameter.h"
 
+namespace CCTools {
+
 // Constructor
 ModelHandler::ModelHandler(const boost::filesystem::path &json_file_path)
 {
@@ -180,3 +182,6 @@ boost::filesystem::path ModelHandler::getTempJsonPath() const
 {
     return temp_json_path_;
 }
+
+
+} // namespace CCTools

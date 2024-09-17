@@ -13,6 +13,8 @@
 #include <vector>
 #include <filesystem>
 
+namespace CCTools {
+
 /**
  * @class HarmonicsDataHandler
  * @brief Class for handling the result of a harmonics calculation.
@@ -140,5 +142,7 @@ private:
  * The x and y values are combined into pairs, where the first element of the pair is the x value and the second element is the y value.
  */
 std::vector<std::pair<double, double>> combinePoints(const std::vector<double> &x, const std::vector<double> &y);
+
+} // namespace CCTools
 
 #endif // HARMONICS_DATA_HANDLER_H

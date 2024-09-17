@@ -1,5 +1,7 @@
 #include "model_calculator.h"
 
+namespace CCTools {
+
 ModelCalculator::ModelCalculator(const boost::filesystem::path &json_file_path)
 {
     if (!load_model(json_file_path))
@@ -330,3 +332,5 @@ bool ModelCalculator::has_mesh_calc()
 {
     return mesh_calc_ != nullptr;
 }
+
+} // namespace CCTools

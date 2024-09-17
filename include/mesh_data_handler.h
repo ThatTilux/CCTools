@@ -13,6 +13,8 @@
 #include <vector>
 #include <filesystem>
 
+namespace CCTools {
+
 /**
  * @class MeshDataHandler
  * @brief Class for handling the result of a mesh calculation.
@@ -80,5 +82,7 @@ private:
      */
     std::list<rat::mdl::ShMeshDataPr> mesh_data_;
 };
+
+} // namespace CCTools
 
 #endif // MESH_DATA_HANDLER_H

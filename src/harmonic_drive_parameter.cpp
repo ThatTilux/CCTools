@@ -1,5 +1,7 @@
 #include "harmonic_drive_parameter.h"
 
+namespace CCTools {
+
 // Implementation of the constructor using HarmonicDriveParameterType
 HarmonicDriveParameters::HarmonicDriveParameters(double value, HarmonicDriveParameterType t)
     : offset(0.0), slope(0.0), constant(0.0), type(Type::Undefined) {
@@ -114,3 +116,6 @@ bool HarmonicDriveParameters::operator==(const HarmonicDriveParameters& other) c
             return false;
     }
 }
+
+
+} // namespace CCTools

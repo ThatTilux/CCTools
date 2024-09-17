@@ -1,5 +1,7 @@
 #include "harmonics_data_handler.h"
 
+namespace CCTools {
+
 // class for handling the result of a harmonics calculation
 
 // dummy constructor
@@ -164,3 +166,5 @@ std::vector<std::pair<double, double>> combinePoints(const std::vector<double> &
     }
     return points;
 }
+
+} // namespace CCTools

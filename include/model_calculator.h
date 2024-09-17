@@ -17,6 +17,8 @@
 #include "mesh_data_handler.h"
 #include "Logger.hh"
 
+namespace CCTools {
+
 /**
  * @class ModelCalculator
  * @brief Class to run computations of a magnet model.
@@ -181,5 +183,7 @@ private:
     std::string mesh_calc_name_;
     std::string harmonics_axis_name_;
 };
+
+} // namespace CCTools
 
 #endif // MODEL_CALCULATOR_H

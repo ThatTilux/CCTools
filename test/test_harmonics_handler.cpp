@@ -4,6 +4,8 @@
 #include <boost/filesystem.hpp>
 #include <constants.h>
 
+namespace CCTools {
+
 class HarmonicsHandlerTest : public ::testing::Test
 {
 protected:
@@ -62,3 +64,5 @@ TEST_F(HarmonicsHandlerTest, ConstructorHandlesNullData)
         EXPECT_TRUE(handler.get_Bn(1).empty());
     });
 }
+
+} // namespace CCTools

@@ -11,7 +11,7 @@
 #include <fstream>
 #include <stdexcept>
 
-
+namespace CCTools {
 
 /**
  * @brief Enum class representing harmonic drive parameter types for custom cct harmonics.
@@ -138,5 +138,7 @@ private:
      */
     boost::filesystem::path temp_json_path_;
 };
+
+} // namespace CCTools
 
 #endif // MODEL_HANDLER_H
