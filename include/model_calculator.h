@@ -1,5 +1,5 @@
-#ifndef MODEL_CALCULATOR_H
-#define MODEL_CALCULATOR_H
+#ifndef CCTOOLS_MODEL_CALCULATOR_H
+#define CCTOOLS_MODEL_CALCULATOR_H
 
 #include <armadillo>
 #include <boost/filesystem.hpp>
@@ -186,4 +186,4 @@ private:
 
 } // namespace CCTools
 
-#endif // MODEL_CALCULATOR_H
+#endif // CCTOOLS_MODEL_CALCULATOR_H

@@ -1,5 +1,5 @@
-#ifndef MODEL_HANDLER_H
-#define MODEL_HANDLER_H
+#ifndef CCTOOLS_MODEL_HANDLER_H
+#define CCTOOLS_MODEL_HANDLER_H
 
 #include <string>
 #include <vector>
@@ -141,4 +141,4 @@ private:
 
 } // namespace CCTools
 
-#endif // MODEL_HANDLER_H
+#endif // CCTOOLS_MODEL_HANDLER_H

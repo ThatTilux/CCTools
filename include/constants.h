@@ -1,5 +1,5 @@
-#ifndef CONSTANTS_H
-#define CONSTANTS_H
+#ifndef CCTOOLS_CONSTANTS_H
+#define CCTOOLS_CONSTANTS_H
 
 #include <string>
 
@@ -19,4 +19,4 @@ inline const std::string LOGS_DIR = "../logs/";
 
 } // namespace CCTools
 
-#endif // CONSTANTS_H
+#endif // CCTOOLS_CONSTANTS_H

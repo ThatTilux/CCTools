@@ -1,5 +1,5 @@
-#ifndef HARMONIC_DRIVE_PARAMETER_H
-#define HARMONIC_DRIVE_PARAMETER_H
+#ifndef CCTOOLS_HARMONIC_DRIVE_PARAMETER_H
+#define CCTOOLS_HARMONIC_DRIVE_PARAMETER_H
 
 #include <variant>
 #include <string>
@@ -184,4 +184,4 @@ using HarmonicDriveParameterMap = std::unordered_map<std::string, HarmonicDriveP
 
 } // namespace CCTools
 
-#endif // HARMONIC_DRIVE_PARAMETER_H
+#endif // CCTOOLS_HARMONIC_DRIVE_PARAMETER_H

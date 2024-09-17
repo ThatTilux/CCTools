@@ -1,5 +1,5 @@
-#ifndef LOGGER_HH
-#define LOGGER_HH
+#ifndef CCTOOLS_LOGGER_HH
+#define CCTOOLS_LOGGER_HH
 
 #include <memory>
 #include <spdlog/spdlog.h>
@@ -271,4 +271,4 @@ private:
 
 } // namespace CCTools
 
-#endif // LOGGER_HH
+#endif // CCTOOLS_LOGGER_HH

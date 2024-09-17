@@ -1,5 +1,5 @@
-#ifndef HARMONICS_DATA_HANDLER_H
-#define HARMONICS_DATA_HANDLER_H
+#ifndef CCTOOLS_HARMONICS_DATA_HANDLER_H
+#define CCTOOLS_HARMONICS_DATA_HANDLER_H
 
 #include <armadillo>
 #include <boost/filesystem.hpp>
@@ -145,4 +145,4 @@ std::vector<std::pair<double, double>> combinePoints(const std::vector<double> &
 
 } // namespace CCTools
 
-#endif // HARMONICS_DATA_HANDLER_H
+#endif // CCTOOLS_HARMONICS_DATA_HANDLER_H

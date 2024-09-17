@@ -1,5 +1,5 @@
-#ifndef MESH_DATA_HANDLER_H
-#define MESH_DATA_HANDLER_H
+#ifndef CCTOOLS_MESH_DATA_HANDLER_H
+#define CCTOOLS_MESH_DATA_HANDLER_H
 
 #include <armadillo>
 #include <boost/filesystem.hpp>
@@ -85,4 +85,4 @@ private:
 
 } // namespace CCTools
 
-#endif // MESH_DATA_HANDLER_H
+#endif // CCTOOLS_MESH_DATA_HANDLER_H
