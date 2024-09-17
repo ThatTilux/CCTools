@@ -63,7 +63,7 @@ public:
      * @return HarmonicDriveParameterMap Map of harmonic drive values.
      * 
      * This function extracts the harmonic drive values and their type from the JSON file.
-     * Only extracts drives from custom cct harmonics whose name starts with the prefix.
+     * Only extracts drives from custom cct harmonics whose name starts with the set prefix.
      */
     HarmonicDriveParameterMap getHarmonicDriveValues(const std::string& prefix = "B");
 
