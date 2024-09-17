@@ -105,6 +105,12 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a77adb591a0f0659e319663cac0f34a8f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="namespaceCCTools.html#abec2d84dc4589470084a2ef4eeb59ee2">HarmonicDriveParameterMap</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#a77adb591a0f0659e319663cac0f34a8f">getHarmonicDriveValues</a> (const std::string &amp;prefix=&quot;B&quot;)</td></tr>
 <tr class="memdesc:a77adb591a0f0659e319663cac0f34a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get all harmonic drive values from the JSON file.  <a href="classCCTools_1_1ModelHandler.html#a77adb591a0f0659e319663cac0f34a8f">More...</a><br /></td></tr>
 <tr class="separator:a77adb591a0f0659e319663cac0f34a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a725f07317d050cc309f099f9edfe1cb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#a725f07317d050cc309f099f9edfe1cb9">setValueByName</a> (std::string name, std::vector&lt; std::string &gt; children, std::string target, Json::Value value)</td></tr>
+<tr class="memdesc:a725f07317d050cc309f099f9edfe1cb9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set a value of the CCT in the JSON file.  <a href="classCCTools_1_1ModelHandler.html#a725f07317d050cc309f099f9edfe1cb9">More...</a><br /></td></tr>
+<tr class="separator:a725f07317d050cc309f099f9edfe1cb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abc654b2f5c320ccba58a4d1901b3c564"><td class="memItemLeft" align="right" valign="top">Json::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#abc654b2f5c320ccba58a4d1901b3c564">getValueByName</a> (const std::string &amp;name, const std::vector&lt; std::string &gt; &amp;children, const std::string &amp;target)</td></tr>
+<tr class="memdesc:abc654b2f5c320ccba58a4d1901b3c564"><td class="mdescLeft">&#160;</td><td class="mdescRight">Retrieves the value of a target element in a JSON object by traversing its children.  <a href="classCCTools_1_1ModelHandler.html#abc654b2f5c320ccba58a4d1901b3c564">More...</a><br /></td></tr>
+<tr class="separator:abc654b2f5c320ccba58a4d1901b3c564"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ff86be3a7a4c34189ec7b36098df1f0"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#a8ff86be3a7a4c34189ec7b36098df1f0">setHarmonicDriveValue</a> (const std::string &amp;name, const <a class="el" href="structCCTools_1_1HarmonicDriveParameters.html">HarmonicDriveParameters</a> &amp;params)</td></tr>
 <tr class="memdesc:a8ff86be3a7a4c34189ec7b36098df1f0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Apply a harmonic drive value in the JSON file.  <a href="classCCTools_1_1ModelHandler.html#a8ff86be3a7a4c34189ec7b36098df1f0">More...</a><br /></td></tr>
 <tr class="separator:a8ff86be3a7a4c34189ec7b36098df1f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -242,6 +248,58 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
+<a id="abc654b2f5c320ccba58a4d1901b3c564"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abc654b2f5c320ccba58a4d1901b3c564">&#9670;&nbsp;</a></span>getValueByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Json::Value CCTools::ModelHandler::getValueByName </td>
+          <td>(</td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; std::string &gt; &amp;&#160;</td>
+          <td class="paramname"><em>children</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::string &amp;&#160;</td>
+          <td class="paramname"><em>target</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Retrieves the value of a target element in a JSON object by traversing its children. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>The name of the JSON element to find. </td></tr>
+    <tr><td class="paramname">children</td><td>The names of the children to traverse. May be empty. </td></tr>
+    <tr><td class="paramname">target</td><td>The name of the target JSON element to retrieve. </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>The value of the target JSON element.</dd></dl>
+<dl class="exception"><dt>Exceptions</dt><dd>
+  <table class="exception">
+    <tr><td class="paramname">std::runtime_error</td><td>if the element is not found or if an error occurs.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function searches through a JSON object to find an element with a specified name, traverses its children, and retrieves the value of the target element. It opens the JSON file, reads its content, and utilizes a recursive helper function to perform the search and retrieval. </p>
+
+</div>
+</div>
 <a id="a8ff86be3a7a4c34189ec7b36098df1f0"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a8ff86be3a7a4c34189ec7b36098df1f0">&#9670;&nbsp;</a></span>setHarmonicDriveValue()</h2>
 
@@ -277,6 +335,59 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <p>This function updates a harmonic drive value for a custom cct harmonic in the JSON file. When multiple custom harmonics with the <code>name</code> are found, all are updated with the new <code>params</code>. </p>
+
+</div>
+</div>
+<a id="a725f07317d050cc309f099f9edfe1cb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a725f07317d050cc309f099f9edfe1cb9">&#9670;&nbsp;</a></span>setValueByName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CCTools::ModelHandler::setValueByName </td>
+          <td>(</td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>name</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::string &gt;&#160;</td>
+          <td class="paramname"><em>children</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::string&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">Json::Value&#160;</td>
+          <td class="paramname"><em>value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Set a value of the CCT in the JSON file. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">name</td><td>Name of the JSON element to be edited. </td></tr>
+    <tr><td class="paramname">children</td><td>Names of the children of the JSON element. May be empty. </td></tr>
+    <tr><td class="paramname">target</td><td>Name of the target JSON element to be edited. </td></tr>
+    <tr><td class="paramname">value</td><td>New value for the JSON element.</td></tr>
+  </table>
+  </dd>
+</dl>
+<p>This function updates a value in the JSON file of the CCT. The function will find the JSON element with the correct name, traverse the children, and update the target element with the new value. The target has to be present, creating new elements is not supported.</p>
+<p>Example usage: <code>setValueByName("Inner Layer", {"rho"}, "radius", 0.49)</code> will find the JSON element with the name "Inner Layer", traverse to its child "rho", and update "radius" value of "rho" to 0.49. </p>
 
 </div>
 </div>

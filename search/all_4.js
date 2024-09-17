@@ -11,5 +11,6 @@ var searchData=
   ['getminmaxzvalues_23',['getMinMaxZValues',['../classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717',1,'CCTools::MeshDataHandler']]],
   ['getoffset_24',['getOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a517afddf1f3231698ca615e41a269522',1,'CCTools::HarmonicDriveParameters']]],
   ['getslope_25',['getSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a85b2416c2dec0a7ba32b6ff548975e1a',1,'CCTools::HarmonicDriveParameters']]],
-  ['gettempjsonpath_26',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]]
+  ['gettempjsonpath_26',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]],
+  ['getvaluebyname_27',['getValueByName',['../classCCTools_1_1ModelHandler.html#abc654b2f5c320ccba58a4d1901b3c564',1,'CCTools::ModelHandler']]]
 ];
