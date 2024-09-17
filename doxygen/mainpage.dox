@@ -8,19 +8,19 @@
  *
  * ## Main Classes
  *
- * - [ModelHandler](classModelHandler.html): Provides functions to manipulate a magnet model JSON file, including extracting and modifying drive values for custom CCT harmonics.
+ * - [ModelHandler](classCCTools_1_1ModelHandler.html): Provides functions to manipulate a magnet model JSON file, including extracting and modifying drive values for custom CCT harmonics.
  *
- * - [ModelCalculator](classModelCalculator.html): Runs computations on a magnet model, including harmonics and mesh calculations, providing results through simplified handler classes.
+ * - [ModelCalculator](classCCTools_1_1ModelCalculator.html): Runs computations on a magnet model, including harmonics and mesh calculations, providing results through simplified handler classes.
  *
  * ## Supporting Classes
  *
- * - [HarmonicDriveParameters](structHarmonicDriveParameters.html): Stores the harmonic drive parameters for a custom CCT harmonic, supporting different parameter types.
+ * - [HarmonicDriveParameters](structCCTools_1_1HarmonicDriveParameters.html): Stores the harmonic drive parameters for a custom CCT harmonic, supporting different parameter types.
  *
- * - [HarmonicsDataHandler](classHarmonicsDataHandler.html): Handles the results of harmonics calculations, providing functions to extract information from raw harmonics data.
+ * - [HarmonicsDataHandler](classCCTools_1_1HarmonicsDataHandler.html): Handles the results of harmonics calculations, providing functions to extract information from raw harmonics data.
  *
- * - [MeshDataHandler](classMeshDataHandler.html): Handles the results of mesh calculations, providing functions to extract information from raw mesh data.
+ * - [MeshDataHandler](classCCTools_1_1MeshDataHandler.html): Handles the results of mesh calculations, providing functions to extract information from raw mesh data.
  *
- * - [Logger](classLogger.html): Singleton class to log messages to the console and a log file, supporting different log levels and formats.
+ * - [Logger](classCCTools_1_1Logger.html): Singleton class to log messages to the console and a log file, supporting different log levels and formats.
  *
  * - [Constants](constants_8h.html): Defines constant values used throughout the library, such as directory paths.
  */
