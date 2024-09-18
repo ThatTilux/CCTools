@@ -386,7 +386,7 @@ Public Member Functions</h2></td></tr>
   </table>
   </dd>
 </dl>
-<p>This function updates a value in the JSON file of the CCT. The function will find the JSON element with the correct name, traverse the children, and update the target element with the new value. The target has to be present, creating new elements is not supported.</p>
+<p>This function updates a value in the JSON file of the CCT. The function will find the JSON element with the correct name, traverse the children, and update the target element with the new value. The target has to be present, creating new elements is not supported. If multiple JSON elements with the <code>name</code> exist, all will be updated with the new value.</p>
 <p>Example usage: <code>setValueByName("Inner Layer", {"rho"}, "radius", 0.49)</code> will find the JSON element with the name "Inner Layer", traverse to its child "rho", and update "radius" value of "rho" to 0.49. </p>
 
 </div>
