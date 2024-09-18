@@ -209,6 +209,17 @@ TEST_F(ModelHandlerTest, SetValueByNameAndGetValueByName)
     ASSERT_THROW({
         value = handler.getValueByName("NonexistentName", {}, "enable");
     }, std::runtime_error);
+
+    // Test case 11: Check that all occurences are changed
+    // The model has 4 cct harmonics named "B5"
+    // Change the name
+    ASSERT_NO_THROW({
+        handler.setValueByName("B5", {}, "name", Json::Value("NewName"));
+    });
+    // Make sure there is no harmonic named B5 anymore
+    ASSERT_THROW({
+        value = handler.getValueByName("B5", {}, "name");
+    }, std::runtime_error);
 }
 
 
