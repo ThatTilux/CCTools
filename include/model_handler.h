@@ -79,6 +79,7 @@ namespace CCTools
          *
          * This function updates a value in the JSON file of the CCT. The function will find the JSON element with the correct name, traverse the children, and update the target element with the new value.
          * The target has to be present, creating new elements is not supported.
+         * If multiple JSON elements with the `name` exist, all will be updated with the new value.
          *
          * Example usage: `setValueByName("Inner Layer", {"rho"}, "radius", 0.49)` will find the JSON element with the name "Inner Layer", traverse to its child "rho", and update "radius" value of "rho" to 0.49.
          */
