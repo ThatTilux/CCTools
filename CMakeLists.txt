@@ -54,38 +54,39 @@ target_include_directories(CCTools PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-# Google Test integration
-FetchContent_Declare(
-    googletest
-    GIT_REPOSITORY https://github.com/google/googletest.git
-    GIT_TAG        v1.15.2
-)
-set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
-FetchContent_MakeAvailable(googletest)
-
-# Get all test files in test directory
-file(GLOB TEST_SOURCES "test/*.cpp")
-
-# Enable testing
-enable_testing()
-
-# Create the test executable
-add_executable(cctools_test ${SOURCES} ${TEST_SOURCES})
-target_link_libraries(cctools_test PRIVATE gtest_main CCTools)
-
-# Add tests
-add_test(NAME cctools_test COMMAND cctools_test)
-
-# Suppress DartConfiguration.tcl warnings
-set(CMAKE_SUPPRESS_REGENERATION true)
-
-# Disable CDash
-set(CTEST_USE_LAUNCHERS OFF)
-
 # ----------------------------------------
-# Add example executable (only when building this project)
+# Conditional Block: Build Tests and Examples Only If CCTools Is the Main Project
 # ----------------------------------------
 if(CMAKE_CURRENT_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
+
+    # Google Test integration
+    FetchContent_Declare(
+        googletest
+        GIT_REPOSITORY https://github.com/google/googletest.git
+        GIT_TAG        v1.15.2
+    )
+    set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
+    FetchContent_MakeAvailable(googletest)
+
+    # Get all test files in test directory
+    file(GLOB TEST_SOURCES "test/*.cpp")
+
+    # Enable testing
+    enable_testing()
+
+    # Create the test executable
+    add_executable(cctools_test ${SOURCES} ${TEST_SOURCES})
+    target_link_libraries(cctools_test PRIVATE gtest_main CCTools)
+
+    # Add tests
+    add_test(NAME cctools_test COMMAND cctools_test)
+
+    # Suppress DartConfiguration.tcl warnings
+    set(CMAKE_SUPPRESS_REGENERATION true)
+
+    # Disable CDash
+    set(CTEST_USE_LAUNCHERS OFF)
+
     # Create the example executable
     add_executable(cctools_example examples/example.cpp)
     
@@ -96,4 +97,5 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
     target_include_directories(cctools_example PRIVATE
         ${PROJECT_SOURCE_DIR}/include
     )
+
 endif()
