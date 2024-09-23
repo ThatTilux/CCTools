@@ -12,6 +12,7 @@ namespace CCTools {
  */
 class CalcResultHandlerBase
 {
+public:
     virtual ~CalcResultHandlerBase() {}
 };
 
