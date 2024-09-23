@@ -54,10 +54,18 @@ target_include_directories(CCTools PUBLIC
     $<INSTALL_INTERFACE:include>
 )
 
-# ----------------------------------------
-# Conditional Block: Build Tests and Examples Only If CCTools Is the Main Project
-# ----------------------------------------
-if(CMAKE_CURRENT_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
+# Determine if CCTools is the top-level project
+if(CMAKE_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
+    set(CCTools_IS_TOPLEVEL ON)
+else()
+    set(CCTools_IS_TOPLEVEL OFF)
+endif()
+
+# Option to build tests and examples, default to ON if CCTools is top-level project
+option(CCTools_BUILD_TESTS "Build CCTools tests and examples" ${CCTools_IS_TOPLEVEL})
+
+# Conditional Block: Build Tests and Examples Only If CCTools_BUILD_TESTS is ON
+if(CCTools_BUILD_TESTS)
 
     # Google Test integration
     FetchContent_Declare(
