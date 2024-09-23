@@ -41,10 +41,10 @@ FetchContent_Declare(
 FetchContent_MakeAvailable(jsoncpp)
 
 # Get all source files in src directory
-file(GLOB SOURCES "src/*.cpp")
+file(GLOB CCTOOLS_SOURCES "src/*.cpp")
 
 # Create public library
-add_library(CCTools STATIC ${SOURCES})
+add_library(CCTools STATIC ${CCTOOLS_SOURCES})
 target_link_libraries(CCTools PUBLIC Rat::Models armadillo Boost::filesystem jsoncpp_lib ZLIB::ZLIB)
 
 # Specify include directories for consumers
@@ -69,13 +69,13 @@ if(CMAKE_CURRENT_SOURCE_DIR STREQUAL PROJECT_SOURCE_DIR)
     FetchContent_MakeAvailable(googletest)
 
     # Get all test files in test directory
-    file(GLOB TEST_SOURCES "test/*.cpp")
+    file(GLOB CCTOOLS_TEST_SOURCES "test/*.cpp")
 
     # Enable testing
     enable_testing()
 
     # Create the test executable
-    add_executable(cctools_test ${SOURCES} ${TEST_SOURCES})
+    add_executable(cctools_test ${CCTOOLS_SOURCES} ${CCTOOLS_TEST_SOURCES})
     target_link_libraries(cctools_test PRIVATE gtest_main CCTools)
 
     # Add tests
