@@ -6,6 +6,7 @@ var NAVTREEINDEX0 =
 "calc__result__handler__base_8h.html":[2,0,0,0],
 "calc__result__handler__base_8h_source.html":[2,0,0,0],
 "classCCTools_1_1CalcResultHandlerBase.html":[1,0,0,0],
+"classCCTools_1_1CalcResultHandlerBase.html#ae34904357eb71fbcb5e2e178ac20a711":[1,0,0,0,0],
 "classCCTools_1_1HarmonicsDataHandler.html":[1,0,0,2],
 "classCCTools_1_1HarmonicsDataHandler.html#a15be538ac3f0a4ba7ddfd771641be337":[1,0,0,2,2],
 "classCCTools_1_1HarmonicsDataHandler.html#a5ab469cf198f34b19a9bc1b1f6eab951":[1,0,0,2,1],

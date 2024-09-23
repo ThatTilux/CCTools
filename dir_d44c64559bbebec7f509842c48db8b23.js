@@ -1,7 +1,7 @@
 var dir_d44c64559bbebec7f509842c48db8b23 =
 [
     [ "calc_result_handler_base.h", "calc__result__handler__base_8h.html", [
-      [ "CalcResultHandlerBase", "classCCTools_1_1CalcResultHandlerBase.html", null ]
+      [ "CalcResultHandlerBase", "classCCTools_1_1CalcResultHandlerBase.html", "classCCTools_1_1CalcResultHandlerBase" ]
     ] ],
     [ "constants.h", "constants_8h.html", "constants_8h" ],
     [ "harmonic_drive_parameter.h", "harmonic__drive__parameter_8h.html", "harmonic__drive__parameter_8h" ],

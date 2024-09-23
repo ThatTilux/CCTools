@@ -1,7 +1,7 @@
 var annotated_dup =
 [
     [ "CCTools", "namespaceCCTools.html", [
-      [ "CalcResultHandlerBase", "classCCTools_1_1CalcResultHandlerBase.html", null ],
+      [ "CalcResultHandlerBase", "classCCTools_1_1CalcResultHandlerBase.html", "classCCTools_1_1CalcResultHandlerBase" ],
       [ "HarmonicDriveParameters", "structCCTools_1_1HarmonicDriveParameters.html", "structCCTools_1_1HarmonicDriveParameters" ],
       [ "HarmonicsDataHandler", "classCCTools_1_1HarmonicsDataHandler.html", "classCCTools_1_1HarmonicsDataHandler" ],
       [ "Logger", "classCCTools_1_1Logger.html", null ],
