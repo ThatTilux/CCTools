@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['reload_5fand_5fcalc_5fharmonics_67',['reload_and_calc_harmonics',['../classCCTools_1_1ModelCalculator.html#a80b99a07b7187ccf6ac8d83acdc5d71b',1,'CCTools::ModelCalculator']]],
-  ['reload_5fand_5fcalc_5fmesh_68',['reload_and_calc_mesh',['../classCCTools_1_1ModelCalculator.html#a0b5e522d702d3a4dd99e496aaea43bfc',1,'CCTools::ModelCalculator']]]
+  ['offset_69',['Offset',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aadfd0a82c4bf37b1e90b690a22a20692e',1,'CCTools::HarmonicDriveParameters::Offset()'],['../namespaceCCTools.html#a741d61f67f412eed6e57c35a99402daeadfd0a82c4bf37b1e90b690a22a20692e',1,'CCTools::Offset()']]],
+  ['offsetandslope_70',['OffsetAndSlope',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aa5827bdd5bb75fb462a0a3eccceed8df1',1,'CCTools::HarmonicDriveParameters']]],
+  ['operator_3d_3d_71',['operator==',['../structCCTools_1_1HarmonicDriveParameters.html#acb30117de44afe6a97b59bde52847ee7',1,'CCTools::HarmonicDriveParameters']]]
 ];

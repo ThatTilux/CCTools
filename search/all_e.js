@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['warn_77',['warn',['../classCCTools_1_1Logger.html#ab16aa8015b6ae0eddcda1d9b829ba5d7',1,'CCTools::Logger']]]
+  ['undefined_81',['Undefined',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aaec0fc0100c4fc1ce4eea230c3dc10360',1,'CCTools::HarmonicDriveParameters']]]
 ];

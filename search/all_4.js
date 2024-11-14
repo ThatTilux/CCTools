@@ -8,9 +8,12 @@ var searchData=
   ['get_5fbn_20',['get_bn',['../classCCTools_1_1HarmonicsDataHandler.html#a80ba20245e6e5bb457636b7c48eea2ef',1,'CCTools::HarmonicsDataHandler']]],
   ['getconstant_21',['getConstant',['../structCCTools_1_1HarmonicDriveParameters.html#af1cc34d4130ce3a13e7c3dd3530d8039',1,'CCTools::HarmonicDriveParameters']]],
   ['getharmonicdrivevalues_22',['getHarmonicDriveValues',['../classCCTools_1_1ModelHandler.html#a77adb591a0f0659e319663cac0f34a8f',1,'CCTools::ModelHandler']]],
-  ['getminmaxzvalues_23',['getMinMaxZValues',['../classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717',1,'CCTools::MeshDataHandler']]],
-  ['getoffset_24',['getOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a517afddf1f3231698ca615e41a269522',1,'CCTools::HarmonicDriveParameters']]],
-  ['getslope_25',['getSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a85b2416c2dec0a7ba32b6ff548975e1a',1,'CCTools::HarmonicDriveParameters']]],
-  ['gettempjsonpath_26',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]],
-  ['getvaluebyname_27',['getValueByName',['../classCCTools_1_1ModelHandler.html#abc654b2f5c320ccba58a4d1901b3c564',1,'CCTools::ModelHandler']]]
+  ['getjsonvalueas_23',['getJsonValueAs',['../namespaceCCTools.html#a7c59d2bbf4d4d1034f53687b19f6c812',1,'CCTools']]],
+  ['getjsonvalueas_3c_20bool_20_3e_24',['getJsonValueAs&lt; bool &gt;',['../namespaceCCTools.html#af1d22d228a87a0897e9812236b2180ec',1,'CCTools']]],
+  ['getjsonvalueas_3c_20json_3a_3avalue_20_3e_25',['getJsonValueAs&lt; Json::Value &gt;',['../namespaceCCTools.html#afc29719b50bac646d8916db6b128fa83',1,'CCTools']]],
+  ['getminmaxzvalues_26',['getMinMaxZValues',['../classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717',1,'CCTools::MeshDataHandler']]],
+  ['getoffset_27',['getOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a517afddf1f3231698ca615e41a269522',1,'CCTools::HarmonicDriveParameters']]],
+  ['getslope_28',['getSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a85b2416c2dec0a7ba32b6ff548975e1a',1,'CCTools::HarmonicDriveParameters']]],
+  ['gettempjsonpath_29',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]],
+  ['getvaluebyname_30',['getValueByName',['../classCCTools_1_1ModelHandler.html#a604f85df08c923303d8f61eea3f4a89a',1,'CCTools::ModelHandler']]]
 ];

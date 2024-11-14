@@ -121,6 +121,8 @@ Typedefs</h2></td></tr>
 <tr class="memitem:abec2d84dc4589470084a2ef4eeb59ee2"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#abec2d84dc4589470084a2ef4eeb59ee2">HarmonicDriveParameterMap</a> = std::unordered_map&lt; std::string, <a class="el" href="structCCTools_1_1HarmonicDriveParameters.html">HarmonicDriveParameters</a> &gt;</td></tr>
 <tr class="memdesc:abec2d84dc4589470084a2ef4eeb59ee2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Type definition for the HarmonicDriveParameterMap.  <a href="namespaceCCTools.html#abec2d84dc4589470084a2ef4eeb59ee2">More...</a><br /></td></tr>
 <tr class="separator:abec2d84dc4589470084a2ef4eeb59ee2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5949749811eddce48e5087e66456185"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#ab5949749811eddce48e5087e66456185">JSONChildrenIdentifierType</a> = std::variant&lt; std::string, Json::ArrayIndex &gt;</td></tr>
+<tr class="separator:ab5949749811eddce48e5087e66456185"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -139,6 +141,18 @@ Functions</h2></td></tr>
 <tr class="memitem:a58a5a099d049882024a0f8d695efc920"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::pair&lt; double, double &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#a58a5a099d049882024a0f8d695efc920">combinePoints</a> (const std::vector&lt; double &gt; &amp;x, const std::vector&lt; double &gt; &amp;y)</td></tr>
 <tr class="memdesc:a58a5a099d049882024a0f8d695efc920"><td class="mdescLeft">&#160;</td><td class="mdescRight">Combine two vectors of doubles into a vector of pairs.  <a href="namespaceCCTools.html#a58a5a099d049882024a0f8d695efc920">More...</a><br /></td></tr>
 <tr class="separator:a58a5a099d049882024a0f8d695efc920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56ffb2f14098c73774c847a261a6327"><td class="memItemLeft" align="right" valign="top">template Json::Value&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#af56ffb2f14098c73774c847a261a6327">ModelHandler::accessOrModifyTarget&lt; Json::Value &gt;</a> (Json::Value *current, const <a class="el" href="namespaceCCTools.html#ab5949749811eddce48e5087e66456185">JSONChildrenIdentifierType</a> &amp;target, const std::optional&lt; Json::Value &gt; &amp;new_value)</td></tr>
+<tr class="separator:af56ffb2f14098c73774c847a261a6327"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7c59d2bbf4d4d1034f53687b19f6c812"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7c59d2bbf4d4d1034f53687b19f6c812"><td class="memTemplItemLeft" align="right" valign="top">T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#a7c59d2bbf4d4d1034f53687b19f6c812">getJsonValueAs</a> (const Json::Value &amp;value)</td></tr>
+<tr class="memdesc:a7c59d2bbf4d4d1034f53687b19f6c812"><td class="mdescLeft">&#160;</td><td class="mdescRight">Template function to get JSON::Value as another type.  <a href="namespaceCCTools.html#a7c59d2bbf4d4d1034f53687b19f6c812">More...</a><br /></td></tr>
+<tr class="separator:a7c59d2bbf4d4d1034f53687b19f6c812"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af1d22d228a87a0897e9812236b2180ec"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:af1d22d228a87a0897e9812236b2180ec"><td class="memTemplItemLeft" align="right" valign="top">bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#af1d22d228a87a0897e9812236b2180ec">getJsonValueAs&lt; bool &gt;</a> (const Json::Value &amp;value)</td></tr>
+<tr class="separator:af1d22d228a87a0897e9812236b2180ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afc29719b50bac646d8916db6b128fa83"><td class="memItemLeft" align="right" valign="top">template&lt;&gt; </td></tr>
+<tr class="memitem:afc29719b50bac646d8916db6b128fa83"><td class="memTemplItemLeft" align="right" valign="top">Json::Value&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespaceCCTools.html#afc29719b50bac646d8916db6b128fa83">getJsonValueAs&lt; Json::Value &gt;</a> (const Json::Value &amp;value)</td></tr>
+<tr class="separator:afc29719b50bac646d8916db6b128fa83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
@@ -164,6 +178,20 @@ Variables</h2></td></tr>
 
 <p>Type definition for the HarmonicDriveParameterMap. </p>
 <p>This typedefinition defines the HarmonicDriveParameterMap as an unordered map with string keys and <a class="el" href="structCCTools_1_1HarmonicDriveParameters.html" title="Struct to store the harmonic drive parameter(s) of one custom cct harmonic.">HarmonicDriveParameters</a> values. Convention is to use the name of the custom cct harmonic as the string key. </p>
+
+</div>
+</div>
+<a id="ab5949749811eddce48e5087e66456185"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5949749811eddce48e5087e66456185">&#9670;&nbsp;</a></span>JSONChildrenIdentifierType</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespaceCCTools.html#ab5949749811eddce48e5087e66456185">CCTools::JSONChildrenIdentifierType</a> = typedef std::variant&lt;std::string, Json::ArrayIndex&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
@@ -235,6 +263,118 @@ Variables</h2></td></tr>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>Vector of pairs containing x and y values.</dd></dl>
 <p>This function combines two vectors of doubles into a vector of pairs. The x and y values are combined into pairs, where the first element of the pair is the x value and the second element is the y value. </p>
+
+</div>
+</div>
+<a id="a7c59d2bbf4d4d1034f53687b19f6c812"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7c59d2bbf4d4d1034f53687b19f6c812">&#9670;&nbsp;</a></span>getJsonValueAs()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">T CCTools::getJsonValueAs </td>
+          <td>(</td>
+          <td class="paramtype">const Json::Value &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Template function to get JSON::Value as another type. </p>
+
+</div>
+</div>
+<a id="af1d22d228a87a0897e9812236b2180ec"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af1d22d228a87a0897e9812236b2180ec">&#9670;&nbsp;</a></span>getJsonValueAs&lt; bool &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool <a class="el" href="namespaceCCTools.html#a7c59d2bbf4d4d1034f53687b19f6c812">CCTools::getJsonValueAs</a>&lt; bool &gt; </td>
+          <td>(</td>
+          <td class="paramtype">const Json::Value &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="afc29719b50bac646d8916db6b128fa83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc29719b50bac646d8916db6b128fa83">&#9670;&nbsp;</a></span>getJsonValueAs&lt; Json::Value &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Json::Value <a class="el" href="namespaceCCTools.html#a7c59d2bbf4d4d1034f53687b19f6c812">CCTools::getJsonValueAs</a>&lt; Json::Value &gt; </td>
+          <td>(</td>
+          <td class="paramtype">const Json::Value &amp;&#160;</td>
+          <td class="paramname"><em>value</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af56ffb2f14098c73774c847a261a6327"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56ffb2f14098c73774c847a261a6327">&#9670;&nbsp;</a></span>ModelHandler::accessOrModifyTarget&lt; Json::Value &gt;()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">template Json::Value CCTools::ModelHandler::accessOrModifyTarget&lt; Json::Value &gt; </td>
+          <td>(</td>
+          <td class="paramtype">Json::Value *&#160;</td>
+          <td class="paramname"><em>current</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="namespaceCCTools.html#ab5949749811eddce48e5087e66456185">JSONChildrenIdentifierType</a> &amp;&#160;</td>
+          <td class="paramname"><em>target</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::optional&lt; Json::Value &gt; &amp;&#160;</td>
+          <td class="paramname"><em>new_value</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
 
 </div>
 </div>
