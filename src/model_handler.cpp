@@ -191,7 +191,7 @@ namespace CCTools
         }
     }
 
-    void ModelHandler::setValueByName(std::string name, std::vector<std::string> children, std::string target, Json::Value value)
+    void ModelHandler::setValueByName(std::string name, std::vector<JSONChildrenIdentifierType> children, JSONChildrenIdentifierType target, Json::Value value)
     {
         std::ifstream file(temp_json_path_.string());
         if (!file.is_open())
@@ -214,7 +214,7 @@ namespace CCTools
         out_file.close();
     }
 
-    bool ModelHandler::updateValueByName(Json::Value &root, const std::string &name, const std::vector<std::string> &children, const std::string &target, const Json::Value &value)
+    bool ModelHandler::updateValueByName(Json::Value &root, const std::string &name, const std::vector<JSONChildrenIdentifierType> &children, const JSONChildrenIdentifierType &target, const Json::Value &value)
     {
         // Base case: If the current JSON object has the specified name
         if (root.isObject() && root["name"].asString() == name)
@@ -223,25 +223,69 @@ namespace CCTools
             Json::Value *current = &root;
             for (const auto &child : children)
             {
-                if (current->isMember(child))
+                // Check type of children identifier
+                if (std::holds_alternative<std::string>(child))
                 {
-                    current = &(*current)[child];
+                    const std::string &child_str = std::get<std::string>(child);
+                    // Identifier is a string; references the 'name' field
+                    if (current->isMember(child_str))
+                    {
+                        current = &(*current)[child_str];
+                    }
+                    else
+                    {
+                        throw std::runtime_error("Child element '" + child_str + "' not found.");
+                    }
+                }
+                else if (std::holds_alternative<Json::ArrayIndex>(child))
+                {
+                    Json::ArrayIndex child_index = std::get<Json::ArrayIndex>(child);
+                    // Identifier is an index of an array
+                    if (current->isArray() && child_index < current->size())
+                    {
+                        current = &((*current)[child_index]);
+                    }
+                    else
+                    {
+                        throw std::runtime_error("Child index '" + std::to_string(child_index) + "' out of bounds.");
+                    }
                 }
                 else
                 {
-                    throw std::runtime_error("Child element '" + child + "' not found.");
+                    throw std::runtime_error("Unsupported child identifier type: " + std::to_string(child.index()) + ".");
                 }
             }
 
-            // Update the target element with the new value
-            if (current->isMember(target))
+            // Check type of target
+            if (std::holds_alternative<std::string>(target))
             {
-                (*current)[target] = value;
-                return true; // Indicate success
+                const std::string &target_str = std::get<std::string>(target);
+                if (current->isMember(target_str))
+                {
+                    (*current)[target_str] = value;
+                    return true; // Indicate success
+                }
+                else
+                {
+                    throw std::runtime_error("Target element '" + target_str + "' not found.");
+                }
+            }
+            else if (std::holds_alternative<Json::ArrayIndex>(target))
+            {
+                Json::ArrayIndex target_index = std::get<Json::ArrayIndex>(target);
+                if (current->isArray() && target_index < current->size())
+                {
+                    (*current)[target_index] = value;
+                    return true; // Indicate success
+                }
+                else
+                {
+                    throw std::runtime_error("Target index '" + std::to_string(target_index) + "' out of bounds.");
+                }
             }
             else
             {
-                throw std::runtime_error("Target element '" + target + "' not found.");
+                throw std::runtime_error("Unsupported target identifier type: " + std::to_string(target.index()) + ".");
             }
         }
 
@@ -269,71 +313,134 @@ namespace CCTools
         return found;
     }
 
+    Json::Value ModelHandler::getValueByName(const std::string &name, const std::vector<JSONChildrenIdentifierType> &children, const JSONChildrenIdentifierType &target)
+    {
+        // Open the JSON file
+        std::ifstream file(temp_json_path_.string());
+        if (!file.is_open())
+        {
+            throw std::runtime_error("Failed to open JSON file.");
+        }
 
+        // Parse the JSON file
+        Json::Value root;
+        file >> root;
+        file.close();
 
-Json::Value ModelHandler::getValueByName(const std::string& name, const std::vector<std::string>& children, const std::string& target) {
-    // Open the JSON file
-    std::ifstream file(temp_json_path_.string());
-    if (!file.is_open()) {
-        throw std::runtime_error("Failed to open JSON file.");
+        // Use the recursive helper function to find and retrieve the value
+        return parseValueByName(root, name, children, target);
     }
 
-    // Parse the JSON file
-    Json::Value root;
-    file >> root;
-    file.close();
+    Json::Value ModelHandler::parseValueByName(const Json::Value &root, const std::string &name, const std::vector<JSONChildrenIdentifierType> &children, const JSONChildrenIdentifierType &target)
+    {
+        // Base case: If the current JSON object has the specified name
+        if (root.isObject() && root["name"].asString() == name)
+        {
+            // Traverse through children if specified
+            const Json::Value *current = &root;
+            for (const auto &child : children)
+            {
+                // Check type of children identifier
+                if (std::holds_alternative<std::string>(child))
+                {
+                    const std::string &child_str = std::get<std::string>(child);
+                    // Identifier is a string; references the 'name' field
+                    if (current->isMember(child_str))
+                    {
+                        current = &(*current)[child_str];
+                    }
+                    else
+                    {
+                        throw std::runtime_error("Child element '" + child_str + "' not found.");
+                    }
+                }
+                else if (std::holds_alternative<Json::ArrayIndex>(child))
+                {
+                    Json::ArrayIndex child_index = std::get<Json::ArrayIndex>(child);
+                    // Identifier is an index of an array
+                    if (current->isArray() && child_index < current->size())
+                    {
+                        current = &((*current)[child_index]);
+                    }
+                    else
+                    {
+                        throw std::runtime_error("Child index '" + std::to_string(child_index) + "' out of bounds.");
+                    }
+                }
+                else
+                {
+                    throw std::runtime_error("Unsupported child identifier type: " + std::to_string(child.index()) + ".");
+                }
+            }
 
-    // Use the recursive helper function to find and retrieve the value
-    return parseValueByName(root, name, children, target);
-}
-
-Json::Value ModelHandler::parseValueByName(const Json::Value& root, const std::string& name, const std::vector<std::string>& children, const std::string& target) {
-    // Base case: If the current JSON object has the specified name
-    if (root.isObject() && root["name"].asString() == name) {
-        // Traverse through children if specified
-        const Json::Value* current = &root;
-        for (const auto& child : children) {
-            if (current->isMember(child)) {
-                current = &(*current)[child];
-            } else {
-                throw std::runtime_error("Child element '" + child + "' not found.");
+            // Retrieve the target element value
+            if (std::holds_alternative<std::string>(target))
+            {
+                const std::string &target_str = std::get<std::string>(target);
+                if (current->isMember(target_str))
+                {
+                    return (*current)[target_str];
+                }
+                else
+                {
+                    throw std::runtime_error("Target element '" + target_str + "' not found.");
+                }
+            }
+            else if (std::holds_alternative<Json::ArrayIndex>(target))
+            {
+                Json::ArrayIndex target_index = std::get<Json::ArrayIndex>(target);
+                if (current->isArray() && target_index < current->size())
+                {
+                    return (*current)[target_index];
+                }
+                else
+                {
+                    throw std::runtime_error("Target index '" + std::to_string(target_index) + "' out of bounds.");
+                }
+            }
+            else
+            {
+                throw std::runtime_error("Unsupported target identifier type: " + std::to_string(target.index()) + ".");
             }
         }
 
-        // Retrieve the target element value
-        if (current->isMember(target)) {
-            return (*current)[target];
-        } else {
-            throw std::runtime_error("Target element '" + target + "' not found.");
-        }
-    }
-
-    // Recursive case: Traverse through all members
-    for (const auto& member : root.getMemberNames()) {
-        if (root[member].isObject()) {
-            try {
-                return parseValueByName(root[member], name, children, target);
-            } catch (const std::runtime_error& e) {
-                // Continue searching if not found in this branch
+        // Recursive case: Traverse through all members
+        for (const auto &member : root.getMemberNames())
+        {
+            if (root[member].isObject())
+            {
+                try
+                {
+                    return parseValueByName(root[member], name, children, target);
+                }
+                catch (const std::runtime_error &e)
+                {
+                    // Continue searching if not found in this branch
+                }
             }
-        } else if (root[member].isArray()) {
-            // If the current member is an array, iterate through each element
-            for (const auto& element : root[member]) {
-                if (element.isObject()) {
-                    try {
-                        return parseValueByName(element, name, children, target);
-                    } catch (const std::runtime_error& e) {
-                        // Continue searching if not found in this branch
+            else if (root[member].isArray())
+            {
+                // If the current member is an array, iterate through each element
+                for (const auto &element : root[member])
+                {
+                    if (element.isObject())
+                    {
+                        try
+                        {
+                            return parseValueByName(element, name, children, target);
+                        }
+                        catch (const std::runtime_error &e)
+                        {
+                            // Continue searching if not found in this branch
+                        }
                     }
                 }
             }
         }
+
+        // If the element is not found, throw an exception
+        throw std::runtime_error("Element with name '" + name + "' not found.");
     }
-
-    // If the element is not found, throw an exception
-    throw std::runtime_error("Element with name '" + name + "' not found.");
-}
-
 
     // Getter for the temporary JSON file path
     boost::filesystem::path ModelHandler::getTempJsonPath() const

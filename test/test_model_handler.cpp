@@ -190,6 +190,26 @@ TEST_F(ModelHandlerTest, SetValueByNameAndGetValueByName)
     EXPECT_TRUE(value.isString());
     EXPECT_EQ(value.asString(), "NewName");
 
+    // Test case: Include Json::ArrayIndex in children vector
+    std::vector<JSONChildrenIdentifierType> children_connectv2;
+    children_connectv2.emplace_back("uvw1");
+    children_connectv2.emplace_back(static_cast<Json::ArrayIndex>(0));
+    ASSERT_NO_THROW({
+        handler.setValueByName("Connect South V2", children_connectv2, "u", 0.1);
+    });
+    ASSERT_NEAR(handler.getValueByName("Connect South V2", children_connectv2, "u").asDouble(), 0.1, 1e-4);
+
+    // Test Case: Have Json::ArrayIndex as target
+    ASSERT_NO_THROW({
+        handler.setValueByName("Mesh", {"stngs", "morton_weights"}, static_cast<Json::ArrayIndex>(0), 2);
+        handler.setValueByName("Mesh", {"stngs", "morton_weights"}, static_cast<Json::ArrayIndex>(1), 3);
+        handler.setValueByName("Mesh", {"stngs", "morton_weights"}, static_cast<Json::ArrayIndex>(2), 4);
+    });
+    ASSERT_THROW({
+        handler.setValueByName("Mesh", {"stngs", "morton_weights"}, static_cast<Json::ArrayIndex>(3), 4);
+    }, std::runtime_error);
+    ASSERT_EQ(handler.getValueByName("Mesh", {"stngs", "morton_weights"}, static_cast<Json::ArrayIndex>(0)), 2);
+
     // Test case 7: Attempt to set a value where the target does not exist
     ASSERT_THROW({
         handler.setValueByName("Mesh", {}, "nonexistent_field", Json::Value("value"));

@@ -10,6 +10,7 @@
 #include <iostream>
 #include <fstream>
 #include <stdexcept>
+#include <variant>
 
 namespace CCTools
 {
@@ -35,6 +36,9 @@ namespace CCTools
     // Type definition for the unordered map
     // Keys have format "B1" to "B10"
     using HarmonicDriveParameterMap = std::unordered_map<std::string, HarmonicDriveParameters>;
+
+    // Type for the children idenfitiers of JSON elements
+    using JSONChildrenIdentifierType = std::variant<std::string, Json::ArrayIndex>;
 
 
     /**
@@ -73,8 +77,8 @@ namespace CCTools
         /**
          * @brief Set a value of the CCT in the JSON file.
          * @param name Name of the JSON element to be edited.
-         * @param children Names of the children of the JSON element. May be empty.
-         * @param target Name of the target JSON element to be edited.
+         * @param children Identifiers (name or array index) of the children of the JSON element. May be empty.
+         * @param target Identifier (name or array index) of the target JSON element to be edited.
          * @param value New value for the JSON element.
          *
          * This function updates a value in the JSON file of the CCT. The function will find the JSON element with the correct name, traverse the children, and update the target element with the new value.
@@ -82,15 +86,16 @@ namespace CCTools
          * If multiple JSON elements with the `name` exist, all will be updated with the new value.
          *
          * Example usage: `setValueByName("Inner Layer", {"rho"}, "radius", 0.49)` will find the JSON element with the name "Inner Layer", traverse to its child "rho", and update "radius" value of "rho" to 0.49.
+         * setValueByName("Connect South V2", {"uvw1", 0}, "u", 0.1) will find "Connect South V2", traverse the children "uvw1", traverse to the first element of its array and set the 'u' value.  
          */
-        void setValueByName(std::string name, std::vector<std::string> children, std::string target, Json::Value value);
+        void setValueByName(std::string name, std::vector<JSONChildrenIdentifierType> children, JSONChildrenIdentifierType target, Json::Value value);
 
         /**
          * @brief Retrieves the value of a target element in a JSON object by traversing its children.
          * 
          * @param name The name of the JSON element to find.
-         * @param children The names of the children to traverse. May be empty.
-         * @param target The name of the target JSON element to retrieve.
+         * @param children The identifiers (name or array index) of the children to traverse. May be empty.
+         * @param target The identifier (name or array index) of the target JSON element to retrieve.
          * @return The value of the target JSON element.
          * 
          * @throws std::runtime_error if the element is not found or if an error occurs.
@@ -99,7 +104,7 @@ namespace CCTools
          * its children, and retrieves the value of the target element. It opens the JSON file, reads its content,
          * and utilizes a recursive helper function to perform the search and retrieval.
          */
-        Json::Value getValueByName(const std::string& name, const std::vector<std::string>& children, const std::string& target);
+        Json::Value getValueByName(const std::string& name, const std::vector<JSONChildrenIdentifierType>& children, const JSONChildrenIdentifierType& target);
 
         /**
          * @brief Apply a harmonic drive value in the JSON file.
@@ -140,8 +145,8 @@ namespace CCTools
          * @brief Updates the value of a target element in a JSON object by traversing its children.
          * @param root The root JSON object to search through.
          * @param name The name of the JSON element to find.
-         * @param children The names of the children to traverse. May be empty.
-         * @param target The name of the target JSON element to update.
+         * @param children The identifiers (name or array index) of the children to traverse. May be empty.
+         * @param target The identifier (name or array index) of the target JSON element to update.
          * @param value The new value to set for the target element.
          * @return true if the value was successfully updated, false otherwise.
          *
@@ -149,15 +154,15 @@ namespace CCTools
          * traverses its children, and updates the target element with a new value.
          * The target has to be present, creating new elements is not supported.
          */
-        bool updateValueByName(Json::Value &root, const std::string &name, const std::vector<std::string> &children, const std::string &target, const Json::Value &value);
+        bool updateValueByName(Json::Value &root, const std::string &name, const std::vector<JSONChildrenIdentifierType> &children, const JSONChildrenIdentifierType &target, const Json::Value &value);
 
         /**
          * @brief Recursively searches through a JSON object to retrieve a target element's value by traversing its children.
          * 
          * @param root The root JSON object to search through.
          * @param name The name of the JSON element to find.
-         * @param children The names of the children to traverse. May be empty.
-         * @param target The name of the target JSON element to retrieve.
+         * @param children The identifiers (name or array index) of the children to traverse. May be empty.
+         * @param target The identifier (name or array index) of the target JSON element to retrieve.
          * @return The value of the target JSON element.
          * 
          * @throws std::runtime_error if the element is not found or if an error occurs.
@@ -165,7 +170,7 @@ namespace CCTools
          * This helper function is used internally to recursively navigate through the JSON object and its children
          * to find and retrieve the target element's value.
          */
-        Json::Value parseValueByName(const Json::Value& root, const std::string& name, const std::vector<std::string>& children, const std::string& target);
+        Json::Value parseValueByName(const Json::Value& root, const std::string& name, const std::vector<JSONChildrenIdentifierType>& children, const JSONChildrenIdentifierType& target);
 
         /**
          * @brief Parse the JSON file and extract harmonic drive values.
