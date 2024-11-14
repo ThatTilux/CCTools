@@ -18,7 +18,7 @@ This project is part of the FCC-ee HTS4 research project at CERN.
 The documentation of this library can be viewed [here](https://thattilux.github.io/CCTools/).
 Additionally, example code showcasing core functionalities is located at `examples/example.cpp`.
 
-More sophisticated examples can be found in the repository [CCT-Harmonics-Optimizer](https://github.com/ThatTilux/CCT-Harmonics-Optimizer), an open-source project utilizing this library. 
+More sophisticated examples can be found in the repository [CCT-Harmonics-Optimizer](https://github.com/ThatTilux/CCT-Harmonics-Optimizer), a project within our group utilizing this library. 
 
 ## Prerequisites
 **Note: This software has only been tested on Linux.**
@@ -35,7 +35,7 @@ Before using CCTools, ensure that your system meets the following requirements.
 
 2. **spdlog**:
    - spdlog is a fast C++ logging library.
-   You can install `spdlog` using by cloning the repository and installing it manually:
+   You can install `spdlog` by cloning the repository and installing it manually:
    ```sh
    git clone https://github.com/gabime/spdlog.git
    cd spdlog
