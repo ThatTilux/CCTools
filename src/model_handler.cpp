@@ -219,74 +219,11 @@ namespace CCTools
         // Base case: If the current JSON object has the specified name
         if (root.isObject() && root["name"].asString() == name)
         {
-            // Traverse through children if specified
-            Json::Value *current = &root;
-            for (const auto &child : children)
-            {
-                // Check type of children identifier
-                if (std::holds_alternative<std::string>(child))
-                {
-                    const std::string &child_str = std::get<std::string>(child);
-                    // Identifier is a string; references the 'name' field
-                    if (current->isMember(child_str))
-                    {
-                        current = &(*current)[child_str];
-                    }
-                    else
-                    {
-                        throw std::runtime_error("Child element '" + child_str + "' not found.");
-                    }
-                }
-                else if (std::holds_alternative<Json::ArrayIndex>(child))
-                {
-                    Json::ArrayIndex child_index = std::get<Json::ArrayIndex>(child);
-                    // Identifier is an index of an array
-                    if (current->isArray() && child_index < current->size())
-                    {
-                        current = &((*current)[child_index]);
-                    }
-                    else
-                    {
-                        throw std::runtime_error("Child index '" + std::to_string(child_index) + "' out of bounds.");
-                    }
-                }
-                else
-                {
-                    throw std::runtime_error("Unsupported child identifier type: " + std::to_string(child.index()) + ".");
-                }
-            }
+            // Traverse through children
+            Json::Value *current = traverseHierarchy(&root, children);
 
-            // Check type of target
-            if (std::holds_alternative<std::string>(target))
-            {
-                const std::string &target_str = std::get<std::string>(target);
-                if (current->isMember(target_str))
-                {
-                    (*current)[target_str] = value;
-                    return true; // Indicate success
-                }
-                else
-                {
-                    throw std::runtime_error("Target element '" + target_str + "' not found.");
-                }
-            }
-            else if (std::holds_alternative<Json::ArrayIndex>(target))
-            {
-                Json::ArrayIndex target_index = std::get<Json::ArrayIndex>(target);
-                if (current->isArray() && target_index < current->size())
-                {
-                    (*current)[target_index] = value;
-                    return true; // Indicate success
-                }
-                else
-                {
-                    throw std::runtime_error("Target index '" + std::to_string(target_index) + "' out of bounds.");
-                }
-            }
-            else
-            {
-                throw std::runtime_error("Unsupported target identifier type: " + std::to_string(target.index()) + ".");
-            }
+            // Modify the target element value
+            return accessOrModifyTarget<bool>(current, target, value); // Return success status
         }
 
         // Recursive case: Traverse through all members
@@ -299,7 +236,6 @@ namespace CCTools
             }
             else if (root[member].isArray())
             {
-                // If the current member is an array, iterate through each element
                 for (auto &element : root[member])
                 {
                     if (element.isObject())
@@ -336,72 +272,11 @@ namespace CCTools
         // Base case: If the current JSON object has the specified name
         if (root.isObject() && root["name"].asString() == name)
         {
-            // Traverse through children if specified
-            const Json::Value *current = &root;
-            for (const auto &child : children)
-            {
-                // Check type of children identifier
-                if (std::holds_alternative<std::string>(child))
-                {
-                    const std::string &child_str = std::get<std::string>(child);
-                    // Identifier is a string; references the 'name' field
-                    if (current->isMember(child_str))
-                    {
-                        current = &(*current)[child_str];
-                    }
-                    else
-                    {
-                        throw std::runtime_error("Child element '" + child_str + "' not found.");
-                    }
-                }
-                else if (std::holds_alternative<Json::ArrayIndex>(child))
-                {
-                    Json::ArrayIndex child_index = std::get<Json::ArrayIndex>(child);
-                    // Identifier is an index of an array
-                    if (current->isArray() && child_index < current->size())
-                    {
-                        current = &((*current)[child_index]);
-                    }
-                    else
-                    {
-                        throw std::runtime_error("Child index '" + std::to_string(child_index) + "' out of bounds.");
-                    }
-                }
-                else
-                {
-                    throw std::runtime_error("Unsupported child identifier type: " + std::to_string(child.index()) + ".");
-                }
-            }
+            // Traverse through children
+            Json::Value *current = traverseHierarchy(const_cast<Json::Value *>(&root), children);
 
             // Retrieve the target element value
-            if (std::holds_alternative<std::string>(target))
-            {
-                const std::string &target_str = std::get<std::string>(target);
-                if (current->isMember(target_str))
-                {
-                    return (*current)[target_str];
-                }
-                else
-                {
-                    throw std::runtime_error("Target element '" + target_str + "' not found.");
-                }
-            }
-            else if (std::holds_alternative<Json::ArrayIndex>(target))
-            {
-                Json::ArrayIndex target_index = std::get<Json::ArrayIndex>(target);
-                if (current->isArray() && target_index < current->size())
-                {
-                    return (*current)[target_index];
-                }
-                else
-                {
-                    throw std::runtime_error("Target index '" + std::to_string(target_index) + "' out of bounds.");
-                }
-            }
-            else
-            {
-                throw std::runtime_error("Unsupported target identifier type: " + std::to_string(target.index()) + ".");
-            }
+            return accessOrModifyTarget<Json::Value>(current, target);
         }
 
         // Recursive case: Traverse through all members
@@ -413,14 +288,13 @@ namespace CCTools
                 {
                     return parseValueByName(root[member], name, children, target);
                 }
-                catch (const std::runtime_error &e)
+                catch (const std::runtime_error &)
                 {
                     // Continue searching if not found in this branch
                 }
             }
             else if (root[member].isArray())
             {
-                // If the current member is an array, iterate through each element
                 for (const auto &element : root[member])
                 {
                     if (element.isObject())
@@ -429,7 +303,7 @@ namespace CCTools
                         {
                             return parseValueByName(element, name, children, target);
                         }
-                        catch (const std::runtime_error &e)
+                        catch (const std::runtime_error &)
                         {
                             // Continue searching if not found in this branch
                         }
@@ -438,9 +312,108 @@ namespace CCTools
             }
         }
 
-        // If the element is not found, throw an exception
         throw std::runtime_error("Element with name '" + name + "' not found.");
     }
+
+    Json::Value *ModelHandler::traverseHierarchy(Json::Value *root, const std::vector<JSONChildrenIdentifierType> &children)
+    {
+        Json::Value *current = root;
+        for (const auto &child : children)
+        {
+            // Check type of child
+            if (std::holds_alternative<std::string>(child))
+            {
+                // Child identified by name
+                const std::string &child_str = std::get<std::string>(child);
+                if (current->isMember(child_str))
+                {
+                    current = &(*current)[child_str];
+                }
+                else
+                {
+                    throw std::runtime_error("Child element '" + child_str + "' not found.");
+                }
+            }
+            else if (std::holds_alternative<Json::ArrayIndex>(child))
+            {
+                // Chilf identified by ArrayIndex
+                Json::ArrayIndex child_index = std::get<Json::ArrayIndex>(child);
+                if (current->isArray() && child_index < current->size())
+                {
+                    current = &((*current)[child_index]);
+                }
+                else
+                {
+                    throw std::runtime_error("Child index '" + std::to_string(child_index) + "' out of bounds.");
+                }
+            }
+            else
+            {
+                throw std::runtime_error("Unsupported child identifier type.");
+            }
+        }
+        return current;
+    }
+
+    template <typename T>
+    T ModelHandler::accessOrModifyTarget(Json::Value *current, const JSONChildrenIdentifierType &target, const std::optional<Json::Value> &new_value)
+    {
+        // Check type of target
+        if (std::holds_alternative<std::string>(target))
+        {
+            // Target is identified by name
+            const std::string &target_str = std::get<std::string>(target);
+            if (current->isMember(target_str))
+            {
+                if (new_value)
+                {
+                    (*current)[target_str] = *new_value; // For modification
+                    return true;                         // Return true to indicate successful modification
+                }
+                else
+                {
+                    // For access
+                    // Dummy conversion from JSON::Value to JSON::Value necessary here for template function
+                    return getJsonValueAs<T>((*current)[target_str]);
+                }
+            }
+            else
+            {
+                throw std::runtime_error("Target element '" + target_str + "' not found.");
+            }
+        }
+        else if (std::holds_alternative<Json::ArrayIndex>(target))
+        {
+            // Target identified by ArrayIndex
+            Json::ArrayIndex target_index = std::get<Json::ArrayIndex>(target);
+            if (current->isArray() && target_index < current->size())
+            {
+                if (new_value)
+                {
+                    (*current)[target_index] = *new_value; // For modification
+                    return true;                           // Return true to indicate successful modification
+                }
+                else
+                {
+                    // For access
+                    // Dummy conversion from JSON::Value to JSON::Value necessary here for template function
+                    return getJsonValueAs<T>((*current)[target_index]);
+                }
+            }
+            else
+            {
+                throw std::runtime_error("Target index '" + std::to_string(target_index) + "' out of bounds.");
+            }
+        }
+        else
+        {
+            throw std::runtime_error("Unsupported target identifier type.");
+        }
+    }
+
+    // Explicit instantiation for the 2 cases: accessing and modifying
+    template Json::Value ModelHandler::accessOrModifyTarget<Json::Value>(Json::Value *current, const JSONChildrenIdentifierType &target, const std::optional<Json::Value> &new_value);
+    template bool ModelHandler::accessOrModifyTarget<bool>(Json::Value *current, const JSONChildrenIdentifierType &target, const std::optional<Json::Value> &new_value);
 
     // Getter for the temporary JSON file path
     boost::filesystem::path ModelHandler::getTempJsonPath() const

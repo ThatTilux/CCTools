@@ -11,6 +11,7 @@
 #include <fstream>
 #include <stdexcept>
 #include <variant>
+#include <optional>
 
 namespace CCTools
 {
@@ -173,6 +174,35 @@ namespace CCTools
         Json::Value parseValueByName(const Json::Value& root, const std::string& name, const std::vector<JSONChildrenIdentifierType>& children, const JSONChildrenIdentifierType& target);
 
         /**
+         * @brief Traverses a JSON hierarchy to retrieve a target JSON element.
+         * 
+         * @param root The root JSON object to search through.
+         * @param children Identifiers of the children to traverse (ordering matters).
+         * 
+         * @throws std::runtime_error if the element is not found or invalid parameters were passed.
+         * 
+         * This helper function traverses from the root element through all children and returns a pointer to the last child. 
+         * If no children are passed, the pointer to the root object is returned.
+         */
+        Json::Value *traverseHierarchy(Json::Value *root, const std::vector<JSONChildrenIdentifierType> &children);
+
+
+        /**
+         * @brief Retrieves or modifies a JSON Value.
+         * 
+         * @param current JSON object to access/modify a value of.
+         * @param target Identifier of the target value, must be element of `current`.
+         * @param new_value Optional new value for the target value. If left blank, the function will return the current value.
+         * 
+         * @throws std::runtime_error if the element is not found.
+         * 
+         * This helper function either retrieves or modifies a JSON value. If `new_value` is left blank, this function will return the `target` value of the `current` JSON object. 
+         * If `new_value` is set, this function will set the `target` value and return a bool indicating success or failure.
+         */
+        template <typename T>
+        T accessOrModifyTarget(Json::Value* current, const JSONChildrenIdentifierType& target, const std::optional<Json::Value>& new_value = std::nullopt);
+
+        /**
          * @brief Parse the JSON file and extract harmonic drive values.
          * @param root JSON root object.
          * @param harmonics_map Map to store the harmonic drive values.
@@ -197,6 +227,7 @@ namespace CCTools
          */
         void updateHarmonicDrive(Json::Value &root, const std::string &name, const HarmonicDriveParameterType &type, double value);
 
+
         /**
          * @brief Path of the folder storing the temporary JSON file.
          */
@@ -206,6 +237,22 @@ namespace CCTools
          * @brief Path of the temporary JSON file.
          */
         boost::filesystem::path temp_json_path_;
+    };
+
+    /**
+     * @brief Template function to get JSON::Value as another type.
+     */
+    template <typename T>
+    T getJsonValueAs(const Json::Value& value);
+
+    template <>
+    inline bool getJsonValueAs<bool>(const Json::Value& value) {
+        return value.asBool();
+    };
+
+    template <>
+    inline Json::Value getJsonValueAs<Json::Value>(const Json::Value& value) {
+        return value;  // Return the value as-is for Json::Value type
     };
 
 } // namespace CCTools
