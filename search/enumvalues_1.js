@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['offset_169',['Offset',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aadfd0a82c4bf37b1e90b690a22a20692e',1,'CCTools::HarmonicDriveParameters::Offset()'],['../namespaceCCTools.html#a741d61f67f412eed6e57c35a99402daeadfd0a82c4bf37b1e90b690a22a20692e',1,'CCTools::Offset()']]],
-  ['offsetandslope_170',['OffsetAndSlope',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aa5827bdd5bb75fb462a0a3eccceed8df1',1,'CCTools::HarmonicDriveParameters']]]
+  ['longitudinal_177',['LONGITUDINAL',['../namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac1f6a3c92ee583dc6804bccaac456ae5',1,'CCTools']]]
 ];

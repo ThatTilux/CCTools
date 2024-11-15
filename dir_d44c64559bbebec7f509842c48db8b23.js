@@ -9,9 +9,7 @@ var dir_d44c64559bbebec7f509842c48db8b23 =
     [ "Logger.hh", "Logger_8hh.html", [
       [ "Logger", "classCCTools_1_1Logger.html", null ]
     ] ],
-    [ "mesh_data_handler.h", "mesh__data__handler_8h.html", [
-      [ "MeshDataHandler", "classCCTools_1_1MeshDataHandler.html", "classCCTools_1_1MeshDataHandler" ]
-    ] ],
+    [ "mesh_data_handler.h", "mesh__data__handler_8h.html", "mesh__data__handler_8h" ],
     [ "model_calculator.h", "model__calculator_8h.html", [
       [ "ModelCalculator", "classCCTools_1_1ModelCalculator.html", "classCCTools_1_1ModelCalculator" ]
     ] ],

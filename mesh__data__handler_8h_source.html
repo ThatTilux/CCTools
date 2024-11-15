@@ -101,36 +101,55 @@ $(document).ready(function(){initNavTree('mesh__data__handler_8h_source.html',''
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;<span class="preprocessor">#include &lt;filesystem&gt;</span></div>
 <div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="calc__result__handler__base_8h.html">calc_result_handler_base.h</a>&quot;</span></div>
 <div class="line"><a name="l00016"></a><span class="lineno">   16</span>&#160; </div>
-<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceCCTools.html">CCTools</a> {</div>
-<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160; </div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="classCCTools_1_1MeshDataHandler.html">   25</a></span>&#160;<span class="keyword">class </span><a class="code" href="classCCTools_1_1MeshDataHandler.html">MeshDataHandler</a> : <span class="keyword">public</span> <a class="code" href="classCCTools_1_1CalcResultHandlerBase.html">CalcResultHandlerBase</a></div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;{</div>
-<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;<span class="keyword">public</span>:</div>
-<div class="line"><a name="l00033"></a><span class="lineno">   33</span>&#160;    <a class="code" href="classCCTools_1_1MeshDataHandler.html#a49f7ae72a0091e86fb36ffa3cad2cd0b">MeshDataHandler</a>();</div>
-<div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160; </div>
-<div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <a class="code" href="classCCTools_1_1MeshDataHandler.html#a49f7ae72a0091e86fb36ffa3cad2cd0b">MeshDataHandler</a>(std::list&lt;rat::mdl::ShMeshDataPr&gt; &amp;mesh_data);</div>
-<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160; </div>
-<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;    std::pair&lt;double, double&gt; <a class="code" href="classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717">getMinMaxZValues</a>();</div>
+<div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;<span class="keyword">namespace </span><a class="code" href="namespaceCCTools.html">CCTools</a></div>
+<div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;{</div>
+<div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160; </div>
+<div class="line"><a name="l00020"></a><span class="lineno"><a class="line" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986f">   20</a></span>&#160;    <span class="keyword">enum</span> <a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986f">MeshFieldComponent</a></div>
+<div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;    {</div>
+<div class="line"><a name="l00022"></a><span class="lineno"><a class="line" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac1f6a3c92ee583dc6804bccaac456ae5">   22</a></span>&#160;        <a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac1f6a3c92ee583dc6804bccaac456ae5">LONGITUDINAL</a>,</div>
+<div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fa59df51a902016eb97c86c774215b182d">   23</a></span>&#160;        <a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fa59df51a902016eb97c86c774215b182d">NORMAL</a>,</div>
+<div class="line"><a name="l00024"></a><span class="lineno"><a class="line" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fa96f1032456d685a6c08c689fbecce05d">   24</a></span>&#160;        <a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fa96f1032456d685a6c08c689fbecce05d">TRANSVERSE</a>,</div>
+<div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        <a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac6c48feb88631e1723ad1b76c1571a4d">MAGNITUDE</a></div>
+<div class="line"><a name="l00026"></a><span class="lineno"><a class="line" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac6c48feb88631e1723ad1b76c1571a4d">   26</a></span>&#160;    };</div>
+<div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160; </div>
+<div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="classCCTools_1_1MeshDataHandler.html">   34</a></span>&#160;    <span class="keyword">class </span><a class="code" href="classCCTools_1_1MeshDataHandler.html">MeshDataHandler</a> : <span class="keyword">public</span> <a class="code" href="classCCTools_1_1CalcResultHandlerBase.html">CalcResultHandlerBase</a></div>
+<div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    {</div>
+<div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keyword">public</span>:</div>
+<div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;        <a class="code" href="classCCTools_1_1MeshDataHandler.html#a49f7ae72a0091e86fb36ffa3cad2cd0b">MeshDataHandler</a>();</div>
+<div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160; </div>
+<div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        <a class="code" href="classCCTools_1_1MeshDataHandler.html#a49f7ae72a0091e86fb36ffa3cad2cd0b">MeshDataHandler</a>(std::list&lt;rat::mdl::ShMeshDataPr&gt; &amp;mesh_data);</div>
 <div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160; </div>
-<div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;<span class="keyword">private</span>:</div>
-<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;    rat::mdl::ShMeshDataPr getMeshData(<span class="keywordtype">int</span> index);</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160; </div>
-<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="keywordtype">int</span> getMeshDataSize();</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160; </div>
-<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    <span class="keywordtype">void</span> get_z(rat::mdl::ShMeshDataPr mesh_data, arma::field&lt;arma::dmat&gt; &amp;z);</div>
+<div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;        std::pair&lt;double, double&gt; <a class="code" href="classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717">getMinMaxZValues</a>();</div>
+<div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160; </div>
+<div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;        <span class="keywordtype">double</span> <a class="code" href="classCCTools_1_1MeshDataHandler.html#a8494801cba68b986a30a2054645aba04">getMaxCurvature</a>(<a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986f">MeshFieldComponent</a> field_component);</div>
+<div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160; </div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    <span class="keyword">private</span>:</div>
+<div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        rat::mdl::ShMeshDataPr getMeshData(<span class="keywordtype">int</span> index);</div>
 <div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160; </div>
-<div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    std::list&lt;rat::mdl::ShMeshDataPr&gt; mesh_data_;</div>
-<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;};</div>
+<div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;        <span class="keywordtype">int</span> getMeshDataSize();</div>
 <div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160; </div>
-<div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;} <span class="comment">// namespace CCTools</span></div>
-<div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160; </div>
-<div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CCTOOLS_MESH_DATA_HANDLER_H</span></div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        arma::Row&lt;double&gt; getCurvature(<a class="code" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986f">MeshFieldComponent</a> field_component, <span class="keywordtype">size_t</span> mesh_data_index);</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160; </div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <span class="keywordtype">void</span> get_z(rat::mdl::ShMeshDataPr mesh_data, arma::field&lt;arma::dmat&gt; &amp;z);</div>
+<div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160; </div>
+<div class="line"><a name="l00111"></a><span class="lineno">  111</span>&#160;        std::list&lt;rat::mdl::ShMeshDataPr&gt; mesh_data_;</div>
+<div class="line"><a name="l00112"></a><span class="lineno">  112</span>&#160;    };</div>
+<div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160; </div>
+<div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;} <span class="comment">// namespace CCTools</span></div>
+<div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160; </div>
+<div class="line"><a name="l00116"></a><span class="lineno">  116</span>&#160;<span class="preprocessor">#endif </span><span class="comment">// CCTOOLS_MESH_DATA_HANDLER_H</span></div>
 <div class="ttc" id="acalc__result__handler__base_8h_html"><div class="ttname"><a href="calc__result__handler__base_8h.html">calc_result_handler_base.h</a></div></div>
 <div class="ttc" id="aclassCCTools_1_1CalcResultHandlerBase_html"><div class="ttname"><a href="classCCTools_1_1CalcResultHandlerBase.html">CCTools::CalcResultHandlerBase</a></div><div class="ttdoc">Abstract base class for calculation result handling.</div><div class="ttdef"><b>Definition:</b> calc_result_handler_base.h:14</div></div>
-<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html">CCTools::MeshDataHandler</a></div><div class="ttdoc">Class for handling the result of a mesh calculation.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:26</div></div>
-<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html_a49f7ae72a0091e86fb36ffa3cad2cd0b"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html#a49f7ae72a0091e86fb36ffa3cad2cd0b">CCTools::MeshDataHandler::MeshDataHandler</a></div><div class="ttdeci">MeshDataHandler()</div><div class="ttdoc">Construct an empty dummy MeshDataHandler object.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.cpp:8</div></div>
-<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html_abb36cc29b24d80315d331ed0a89e3717"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717">CCTools::MeshDataHandler::getMinMaxZValues</a></div><div class="ttdeci">std::pair&lt; double, double &gt; getMinMaxZValues()</div><div class="ttdoc">Get the min and max z coordinates of the magnet.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.cpp:21</div></div>
+<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html">CCTools::MeshDataHandler</a></div><div class="ttdoc">Class for handling the result of a mesh calculation.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:35</div></div>
+<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html_a49f7ae72a0091e86fb36ffa3cad2cd0b"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html#a49f7ae72a0091e86fb36ffa3cad2cd0b">CCTools::MeshDataHandler::MeshDataHandler</a></div><div class="ttdeci">MeshDataHandler()</div><div class="ttdoc">Construct an empty dummy MeshDataHandler object.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.cpp:9</div></div>
+<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html_a8494801cba68b986a30a2054645aba04"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html#a8494801cba68b986a30a2054645aba04">CCTools::MeshDataHandler::getMaxCurvature</a></div><div class="ttdeci">double getMaxCurvature(MeshFieldComponent field_component)</div><div class="ttdoc">Get the maximum curvature of the magnet.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.cpp:72</div></div>
+<div class="ttc" id="aclassCCTools_1_1MeshDataHandler_html_abb36cc29b24d80315d331ed0a89e3717"><div class="ttname"><a href="classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717">CCTools::MeshDataHandler::getMinMaxZValues</a></div><div class="ttdeci">std::pair&lt; double, double &gt; getMinMaxZValues()</div><div class="ttdoc">Get the min and max z coordinates of the magnet.</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.cpp:24</div></div>
 <div class="ttc" id="anamespaceCCTools_html"><div class="ttname"><a href="namespaceCCTools.html">CCTools</a></div><div class="ttdef"><b>Definition:</b> harmonic_drive_parameter.cpp:3</div></div>
+<div class="ttc" id="anamespaceCCTools_html_aa1eeed8449615d67dc8a25741514986f"><div class="ttname"><a href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986f">CCTools::MeshFieldComponent</a></div><div class="ttdeci">MeshFieldComponent</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:21</div></div>
+<div class="ttc" id="anamespaceCCTools_html_aa1eeed8449615d67dc8a25741514986fa59df51a902016eb97c86c774215b182d"><div class="ttname"><a href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fa59df51a902016eb97c86c774215b182d">CCTools::NORMAL</a></div><div class="ttdeci">@ NORMAL</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:23</div></div>
+<div class="ttc" id="anamespaceCCTools_html_aa1eeed8449615d67dc8a25741514986fa96f1032456d685a6c08c689fbecce05d"><div class="ttname"><a href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fa96f1032456d685a6c08c689fbecce05d">CCTools::TRANSVERSE</a></div><div class="ttdeci">@ TRANSVERSE</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:24</div></div>
+<div class="ttc" id="anamespaceCCTools_html_aa1eeed8449615d67dc8a25741514986fac1f6a3c92ee583dc6804bccaac456ae5"><div class="ttname"><a href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac1f6a3c92ee583dc6804bccaac456ae5">CCTools::LONGITUDINAL</a></div><div class="ttdeci">@ LONGITUDINAL</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:22</div></div>
+<div class="ttc" id="anamespaceCCTools_html_aa1eeed8449615d67dc8a25741514986fac6c48feb88631e1723ad1b76c1571a4d"><div class="ttname"><a href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986fac6c48feb88631e1723ad1b76c1571a4d">CCTools::MAGNITUDE</a></div><div class="ttdeci">@ MAGNITUDE</div><div class="ttdef"><b>Definition:</b> mesh_data_handler.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

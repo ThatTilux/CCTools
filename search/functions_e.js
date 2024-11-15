@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_7ecalcresulthandlerbase_161',['~CalcResultHandlerBase',['../classCCTools_1_1CalcResultHandlerBase.html#ae34904357eb71fbcb5e2e178ac20a711',1,'CCTools::CalcResultHandlerBase']]]
+  ['_7ecalcresulthandlerbase_168',['~CalcResultHandlerBase',['../classCCTools_1_1CalcResultHandlerBase.html#ae34904357eb71fbcb5e2e178ac20a711',1,'CCTools::CalcResultHandlerBase']]]
 ];
