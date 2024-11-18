@@ -53,7 +53,7 @@ TEST_F(MeshDataHandlerTest, getFilteredMaxCurvature){
 
     double max_curvature_filtered;
     ASSERT_NO_THROW({
-        max_curvature_filtered =  mesh_handler2_.getMaxCurvature(MeshFieldComponent::MAGNITUDE, Cube3D(28.0e-3, 84.0e-3, 27.0e-3, 52.0e-3, 133.0e-3, 270.0e-3));
+        max_curvature_filtered =  mesh_handler2_.getMaxCurvature(MeshFieldComponent::MAGNITUDE, Cube3D(28.0e-3, 84.0e-3, 27.0e-3, 52.0e-3, 133.0e-3, 207.0e-3));
     });
     ASSERT_NEAR(max_curvature_filtered, 6.280, 1e-1); // value from RAT-GUI
 
