@@ -69,16 +69,14 @@ namespace CCTools
     }
 
     // Function to get the maximum curvature
-    double MeshDataHandler::getMaxCurvature(MeshFieldComponent field_component)
+    double MeshDataHandler::getMaxCurvature(MeshFieldComponent field_component, const std::optional<Cube3D> &filter_area)
     {
 
         double max = std::numeric_limits<double>::min();
 
         for (int i = 0; i < getMeshDataSize(); i++)
         {
-            auto mesh_data = getMeshData(i);
-
-            arma::Row<double> K = getCurvature(field_component, i);
+            arma::Row<double> K = getCurvature(field_component, i, filter_area);
 
             double max_K = K.max();
 
@@ -91,11 +89,21 @@ namespace CCTools
         return max;
     }
 
-    arma::Row<double> MeshDataHandler::getCurvature(MeshFieldComponent field_component, size_t mesh_data_index)
+    arma::Row<double> MeshDataHandler::getCurvature(MeshFieldComponent field_component, size_t mesh_data_index, const std::optional<Cube3D> &filter_area)
     {
-        auto mesh_data = getMeshData(mesh_data_index);
+        rat::mdl::ShMeshDataPr mesh_data = getMeshData(mesh_data_index);
 
         arma::dmat K = mesh_data->calc_curvature();
+
+        // filter data if specified
+        if (filter_area.has_value())
+        {
+            filterCurvature(&K, filter_area.value(), mesh_data);
+
+            if(K.n_cols == 0){
+                throw std::invalid_argument("Mesh does not have any nodes in the specified filter area. Cannot compute curvature.");
+            }
+        }
 
         // Extract curvature components
         arma::Row<double> Kx = K.row(0); // x-components
@@ -120,6 +128,47 @@ namespace CCTools
         default:
             throw std::invalid_argument("Invalid field component");
         }
+    }
+
+    void MeshDataHandler::filterCurvature(arma::dmat *K, const Cube3D &filter_area, rat::mdl::ShMeshDataPr mesh_data)
+    {
+        // Get all nodes of the mesh
+        arma::dmat R = mesh_data->get_nodes();
+
+        // Assert that R has the same number of nodes as K
+        if (R.n_cols != K->n_cols)
+        {
+            throw std::invalid_argument("K does not match R in number of nodes.");
+        }
+
+        // New matrix to hold only the values within the filter area
+        arma::dmat filtered_K(K->n_rows, 0);
+
+        // Keep filtered values inside the cube
+        for (size_t i = 0; i < R.n_cols; i++)
+        {
+            // Check if the point i is within the cube
+            if (isPointInCube(R.col(i), filter_area))
+            {
+                filtered_K.insert_cols(filtered_K.n_cols, K->col(i));
+            }
+        }
+
+        // Update the original K matrix to be the filtered version
+        *K = filtered_K;
+    }
+
+    bool MeshDataHandler::isPointInCube(const arma::subview<double>& point, const Cube3D& cube)
+    {
+        double x = point(0);
+        double y = point(1);
+        double z = point(2);
+
+        if (x < cube.x_min || x > cube.x_max || y < cube.y_min || y > cube.y_max || z < cube.z_min || z > cube.z_max)
+        {
+            return false;
+        }
+        return true;
     }
 
     rat::mdl::ShMeshDataPr MeshDataHandler::getMeshData(int index)
