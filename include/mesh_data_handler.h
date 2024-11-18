@@ -79,7 +79,7 @@ namespace CCTools
         /**
          * @brief Get the maximum curvature of the magnet.
          * @param field_component Field component to compute the max curvature for.
-         * @param filter_area (Optional). 3D cube in space to filter curvature data.
+         * @param filter_area (Optional). 3D cube in space to filter curvature data. Values in (m).
          * 
          * Computes the curvature of of the magnet from the mesh, extracts the set field component and returns the maximum.
          * If `filter_area` is set, the function will only consider curvature values from mesh nodes inside the specified area.
@@ -108,7 +108,7 @@ namespace CCTools
          * @brief Get the curvature of the magnet.
          * @param field_component Field component to compute the curvature for.
          * @param mesh_data_index Index of the mesh data to be used in the `mesh_data_` list.
-         * @param filter_area (Optional). 3D cube in space to filter curvature data.
+         * @param filter_area (Optional). 3D cube in space to filter curvature data. Values in (m).
          * @returns Row of curvature per node in the mesh.
          *
          * Computes the curvature of of the magnet from the mesh and extracts the set field component.
@@ -128,8 +128,8 @@ namespace CCTools
 
         /**
          * @brief Determine if point is inside a cube.
-         * @param point Coordinates of the point.
-         * @param cube 3D cube.
+         * @param point Coordinates of the point (m).
+         * @param cube 3D cube. Values in (m).
          * @return true if the point is in the cube, false otherwise.
          */
         bool isPointInCube(const arma::subview<double> &point, const Cube3D &cube);
