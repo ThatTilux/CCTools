@@ -4,6 +4,7 @@ var hierarchy =
       [ "CCTools::HarmonicsDataHandler", "classCCTools_1_1HarmonicsDataHandler.html", null ],
       [ "CCTools::MeshDataHandler", "classCCTools_1_1MeshDataHandler.html", null ]
     ] ],
+    [ "CCTools::Cube3D", "structCCTools_1_1Cube3D.html", null ],
     [ "CCTools::HarmonicDriveParameters", "structCCTools_1_1HarmonicDriveParameters.html", null ],
     [ "CCTools::Logger", "classCCTools_1_1Logger.html", null ],
     [ "CCTools::ModelCalculator", "classCCTools_1_1ModelCalculator.html", null ],

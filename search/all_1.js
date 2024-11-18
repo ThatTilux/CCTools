@@ -8,5 +8,6 @@ var searchData=
   ['combinepoints_6',['combinePoints',['../namespaceCCTools.html#a58a5a099d049882024a0f8d695efc920',1,'CCTools']]],
   ['constant_7',['Constant',['../structCCTools_1_1HarmonicDriveParameters.html#ac7bdd2724de761c4063c6a219b4c4a6aacb17869fe51048b5a5c4c6106551a255',1,'CCTools::HarmonicDriveParameters::Constant()'],['../namespaceCCTools.html#a741d61f67f412eed6e57c35a99402daeacb17869fe51048b5a5c4c6106551a255',1,'CCTools::Constant()']]],
   ['constants_2eh_8',['constants.h',['../constants_8h.html',1,'']]],
-  ['critical_9',['critical',['../classCCTools_1_1Logger.html#a6a00deb800cd6a522d3b77e2e1b3eac0',1,'CCTools::Logger']]]
+  ['critical_9',['critical',['../classCCTools_1_1Logger.html#a6a00deb800cd6a522d3b77e2e1b3eac0',1,'CCTools::Logger']]],
+  ['cube3d_10',['Cube3D',['../structCCTools_1_1Cube3D.html',1,'CCTools::Cube3D'],['../structCCTools_1_1Cube3D.html#ab8f379b43fae8f21dd68593edaf15e43',1,'CCTools::Cube3D::Cube3D()']]]
 ];
