@@ -49,12 +49,11 @@ file(GLOB CCTOOLS_SOURCES "src/*.cpp")
 
 # Create public library
 add_library(CCTools STATIC ${CCTOOLS_SOURCES})
-target_link_libraries(CCTools PUBLIC Rat::Models armadillo Boost::filesystem jsoncpp_lib ZLIB::ZLIB)
+target_link_libraries(CCTools PUBLIC Rat::Models armadillo Boost::filesystem jsoncpp_static ZLIB::ZLIB)
 
 # Specify include directories for consumers
 target_include_directories(CCTools PUBLIC
     $<BUILD_INTERFACE:${PROJECT_SOURCE_DIR}/include>
-    $<BUILD_INTERFACE:${jsoncpp_SOURCE_DIR}/include>
     $<INSTALL_INTERFACE:include>
 )
 
