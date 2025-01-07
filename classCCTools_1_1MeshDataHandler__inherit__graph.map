@@ -1,4 +1,5 @@
 <map id="CCTools::MeshDataHandler" name="CCTools::MeshDataHandler">
-<area shape="rect" id="node1" title="Class for handling the result of a mesh calculation." alt="" coords="23,80,221,107"/>
-<area shape="rect" id="node2" href="$classCCTools_1_1CalcResultHandlerBase.html" title="Abstract base class for calculation result handling." alt="" coords="5,5,239,32"/>
+<area shape="rect" id="Node000001" title="Class for handling the result of a mesh calculation." alt="" coords="23,79,221,104"/>
+<area shape="rect" id="Node000002" href="$classCCTools_1_1CalcResultHandlerBase.html" title="Abstract base class for calculation result handling." alt="" coords="5,5,239,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="125,44,125,79,119,79,119,44"/>
 </map>

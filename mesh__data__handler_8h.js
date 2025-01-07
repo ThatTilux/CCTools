@@ -1,7 +1,6 @@
 var mesh__data__handler_8h =
 [
-    [ "Cube3D", "structCCTools_1_1Cube3D.html", "structCCTools_1_1Cube3D" ],
-    [ "MeshDataHandler", "classCCTools_1_1MeshDataHandler.html", "classCCTools_1_1MeshDataHandler" ],
+    [ "CCTools::MeshDataHandler", "classCCTools_1_1MeshDataHandler.html", "classCCTools_1_1MeshDataHandler" ],
     [ "MeshFieldComponent", "mesh__data__handler_8h.html#aa1eeed8449615d67dc8a25741514986f", [
       [ "LONGITUDINAL", "mesh__data__handler_8h.html#aa1eeed8449615d67dc8a25741514986fac1f6a3c92ee583dc6804bccaac456ae5", null ],
       [ "NORMAL", "mesh__data__handler_8h.html#aa1eeed8449615d67dc8a25741514986fa59df51a902016eb97c86c774215b182d", null ],

@@ -1,5 +1,7 @@
 <map id="CCTools::CalcResultHandlerBase" name="CCTools::CalcResultHandlerBase">
-<area shape="rect" id="node1" title="Abstract base class for calculation result handling." alt="" coords="125,5,359,32"/>
-<area shape="rect" id="node2" href="$classCCTools_1_1HarmonicsDataHandler.html" title="Class for handling the result of a harmonics calculation." alt="" coords="5,80,239,107"/>
-<area shape="rect" id="node3" href="$classCCTools_1_1MeshDataHandler.html" title="Class for handling the result of a mesh calculation." alt="" coords="263,80,461,107"/>
+<area shape="rect" id="Node000001" title="Abstract base class for calculation result handling." alt="" coords="125,5,359,31"/>
+<area shape="rect" id="Node000002" href="$classCCTools_1_1HarmonicsDataHandler.html" title="Class for handling the result of a harmonics calculation." alt="" coords="5,79,239,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="212,40,143,81,140,76,209,35"/>
+<area shape="rect" id="Node000003" href="$classCCTools_1_1MeshDataHandler.html" title="Class for handling the result of a mesh calculation." alt="" coords="263,79,461,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="275,35,344,76,341,81,272,40"/>
 </map>

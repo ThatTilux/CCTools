@@ -1,6 +1,6 @@
 var model__handler_8h =
 [
-    [ "ModelHandler", "classCCTools_1_1ModelHandler.html", "classCCTools_1_1ModelHandler" ],
+    [ "CCTools::ModelHandler", "classCCTools_1_1ModelHandler.html", "classCCTools_1_1ModelHandler" ],
     [ "JSONChildrenIdentifierType", "model__handler_8h.html#ab5949749811eddce48e5087e66456185", null ],
     [ "HarmonicDriveParameterType", "model__handler_8h.html#a741d61f67f412eed6e57c35a99402dae", [
       [ "Offset", "model__handler_8h.html#a741d61f67f412eed6e57c35a99402daeadfd0a82c4bf37b1e90b690a22a20692e", null ],
