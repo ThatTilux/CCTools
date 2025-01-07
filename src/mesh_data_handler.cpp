@@ -148,7 +148,7 @@ namespace CCTools
         for (size_t i = 0; i < R.n_cols; i++)
         {
             // Check if the point i is within the cube
-            if (isPointInCube(R.col(i), filter_area))
+            if (filter_area.isPointInCube(R.col(i)))
             {
                 filtered_K.insert_cols(filtered_K.n_cols, K->col(i));
             }
@@ -156,19 +156,6 @@ namespace CCTools
 
         // Update the original K matrix to be the filtered version
         *K = filtered_K;
-    }
-
-    bool MeshDataHandler::isPointInCube(const arma::subview<double>& point, const Cube3D& cube)
-    {
-        double x = point(0);
-        double y = point(1);
-        double z = point(2);
-
-        if (x < cube.x_min || x > cube.x_max || y < cube.y_min || y > cube.y_max || z < cube.z_min || z > cube.z_max)
-        {
-            return false;
-        }
-        return true;
     }
 
     rat::mdl::ShMeshDataPr MeshDataHandler::getMeshData(int index)

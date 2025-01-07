@@ -14,6 +14,7 @@
 #include <filesystem>
 #include <optional>
 #include "calc_result_handler_base.h"
+#include "cube3d.hh"
 
 namespace CCTools
 {
@@ -27,20 +28,6 @@ namespace CCTools
         NORMAL,
         TRANSVERSE,
         MAGNITUDE
-    };
-
-    /**
-     * Struct for spanning a cube in 3D space.
-     */
-    struct Cube3D
-    {
-        double x_min, x_max;
-        double y_min, y_max;
-        double z_min, z_max;
-
-        // Constructor
-        Cube3D(double xMin, double xMax, double yMin, double yMax, double zMin, double zMax)
-            : x_min(xMin), x_max(xMax), y_min(yMin), y_max(yMax), z_min(zMin), z_max(zMax) {}
     };
 
     /**
@@ -80,7 +67,7 @@ namespace CCTools
          * @brief Get the maximum curvature of the magnet.
          * @param field_component Field component to compute the max curvature for.
          * @param filter_area (Optional). 3D cube in space to filter curvature data. Values in (m).
-         * 
+         *
          * Computes the curvature of of the magnet from the mesh, extracts the set field component and returns the maximum.
          * If `filter_area` is set, the function will only consider curvature values from mesh nodes inside the specified area.
          */
@@ -121,18 +108,10 @@ namespace CCTools
          * @param K Curvature data
          * @param filter_area 3D cube in space to filter the data.
          * @param mesh_data Mesh data that produced `K`.
-         * 
+         *
          * Filters the curvature data by removing all curvature values in `K` from datapoints that are not inside the specified `filter_area`.
          */
         void filterCurvature(arma::dmat *K, const Cube3D &filter_area, rat::mdl::ShMeshDataPr mesh_data);
-
-        /**
-         * @brief Determine if point is inside a cube.
-         * @param point Coordinates of the point (m).
-         * @param cube 3D cube. Values in (m).
-         * @return true if the point is in the cube, false otherwise.
-         */
-        bool isPointInCube(const arma::subview<double> &point, const Cube3D &cube);
 
         /**
          * @brief Get the z coordinates of the mesh data.
