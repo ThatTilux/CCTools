@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['test_5fdata_5fdir_0',['TEST_DATA_DIR',['../namespaceCCTools.html#a2abea38121b4409508e49a9f65c5f8a4',1,'CCTools']]]
+  ['logs_5fdir_0',['LOGS_DIR',['../namespaceCCTools.html#a92167b3b3257d12e35ad8235cc7d5627',1,'CCTools']]]
 ];

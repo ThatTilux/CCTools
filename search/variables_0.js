@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logs_5fdir_0',['LOGS_DIR',['../namespaceCCTools.html#a92167b3b3257d12e35ad8235cc7d5627',1,'CCTools']]]
+  ['invert_5fcube_0',['invert_cube',['../classCCTools_1_1Cube3D.html#ab72fe88f621dea9f5ed16d77ba0c60e7',1,'CCTools::Cube3D']]]
 ];
