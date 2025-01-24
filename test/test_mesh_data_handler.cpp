@@ -63,5 +63,19 @@ TEST_F(MeshDataHandlerTest, getFilteredMaxCurvature){
     }, std::invalid_argument);
 }
 
+TEST_F(MeshDataHandlerTest, getMaxVonMises){
+    double max_von_mises;
+    ASSERT_NO_THROW({
+        max_von_mises = mesh_handler_.getMaxVonMises();
+    });
+    ASSERT_NEAR(max_von_mises, 0.901, 1e-3); // Value from RAT-GUI
+
+    double max_von_mises_2;
+    ASSERT_NO_THROW({
+        max_von_mises_2 = mesh_handler2_.getMaxVonMises();
+    });
+    ASSERT_NEAR(max_von_mises_2, 0.088, 1e-3); // Value from RAT-GUI
+}
+
 
 } // namespace CCTools

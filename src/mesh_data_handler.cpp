@@ -68,6 +68,37 @@ namespace CCTools
         mesh_data->create_xyz(x, y, z, num_edges);
     }
 
+    double MeshDataHandler::getMaxVonMises()
+    {
+        double max = std::numeric_limits<double>::min();
+
+        for (int i = 0; i < getMeshDataSize(); i++)
+        {
+            arma::Row<double> von_mises = getVonMises(i);
+
+            double max_i = von_mises.max();
+
+            if (max_i > max)
+            {
+                max = max_i;
+            }
+        }
+
+        // Convert from Pa to MPa
+        max = max * 1e-6;
+
+        return max;
+    }
+
+    arma::Row<double> MeshDataHandler::getVonMises(size_t mesh_data_index)
+    {
+        rat::mdl::ShMeshDataPr mesh_data = getMeshData(mesh_data_index);
+
+        arma::Row<double> von_mises = mesh_data->calc_von_mises();
+
+        return von_mises;
+    }
+
     // Function to get the maximum curvature
     double MeshDataHandler::getMaxCurvature(MeshFieldComponent field_component, const std::optional<Cube3D> &filter_area)
     {
@@ -100,7 +131,8 @@ namespace CCTools
         {
             filterCurvature(&K, filter_area.value(), mesh_data);
 
-            if(K.n_cols == 0){
+            if (K.n_cols == 0)
+            {
                 throw std::invalid_argument("Mesh does not have any nodes in the specified filter area. Cannot compute curvature.");
             }
         }

@@ -73,6 +73,12 @@ namespace CCTools
          */
         double getMaxCurvature(MeshFieldComponent field_component, const std::optional<Cube3D> &filter_area = std::nullopt);
 
+        /**
+         * @brief Get the maximum Von Mises pressure (MPa) in the model.
+         * @returns The maximum Von Mises pressure (MPa).
+         */
+        double getMaxVonMises();
+
     private:
         /**
          * @brief Get the mesh data at the specified index.
@@ -90,6 +96,15 @@ namespace CCTools
          * This function returns the size of the raw mesh data list.
          */
         int getMeshDataSize();
+
+        /**
+         * @brief Get the Von Mises pressure (Pa)
+         * @param mesh_data_index Index of the mesh data to be used in the `mesh_data_` list.
+         * @returns Row of Von Mises pressure per node in the mesh. Values in Pa.
+         * 
+         * Computes the Von Mises Pressure (Pa) from the mesh data. Note that the unit is Pa and not MPa.
+         */
+        arma::Row<double> getVonMises(size_t mesh_data_index);
 
         /**
          * @brief Get the curvature of the magnet.
