@@ -11,9 +11,10 @@ var searchData=
   ['getjsonvalueas_3c_20bool_20_3e_8',['getJsonValueAs&lt; bool &gt;',['../namespaceCCTools.html#af1d22d228a87a0897e9812236b2180ec',1,'CCTools']]],
   ['getjsonvalueas_3c_20json_3a_3avalue_20_3e_9',['getJsonValueAs&lt; Json::Value &gt;',['../namespaceCCTools.html#afc29719b50bac646d8916db6b128fa83',1,'CCTools']]],
   ['getmaxcurvature_10',['getMaxCurvature',['../classCCTools_1_1MeshDataHandler.html#ae09ee9d728afedad7a82e5d8f220b957',1,'CCTools::MeshDataHandler']]],
-  ['getminmaxzvalues_11',['getMinMaxZValues',['../classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717',1,'CCTools::MeshDataHandler']]],
-  ['getoffset_12',['getOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a517afddf1f3231698ca615e41a269522',1,'CCTools::HarmonicDriveParameters']]],
-  ['getslope_13',['getSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a85b2416c2dec0a7ba32b6ff548975e1a',1,'CCTools::HarmonicDriveParameters']]],
-  ['gettempjsonpath_14',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]],
-  ['getvaluebyname_15',['getValueByName',['../classCCTools_1_1ModelHandler.html#a604f85df08c923303d8f61eea3f4a89a',1,'CCTools::ModelHandler']]]
+  ['getmaxvonmises_11',['getMaxVonMises',['../classCCTools_1_1MeshDataHandler.html#acd56f86d480b65b0b6e539cb6ec76b29',1,'CCTools::MeshDataHandler']]],
+  ['getminmaxzvalues_12',['getMinMaxZValues',['../classCCTools_1_1MeshDataHandler.html#abb36cc29b24d80315d331ed0a89e3717',1,'CCTools::MeshDataHandler']]],
+  ['getoffset_13',['getOffset',['../structCCTools_1_1HarmonicDriveParameters.html#a517afddf1f3231698ca615e41a269522',1,'CCTools::HarmonicDriveParameters']]],
+  ['getslope_14',['getSlope',['../structCCTools_1_1HarmonicDriveParameters.html#a85b2416c2dec0a7ba32b6ff548975e1a',1,'CCTools::HarmonicDriveParameters']]],
+  ['gettempjsonpath_15',['getTempJsonPath',['../classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290',1,'CCTools::ModelHandler']]],
+  ['getvaluebyname_16',['getValueByName',['../classCCTools_1_1ModelHandler.html#a604f85df08c923303d8f61eea3f4a89a',1,'CCTools::ModelHandler']]]
 ];

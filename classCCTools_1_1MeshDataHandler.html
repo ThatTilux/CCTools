@@ -135,6 +135,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ae09ee9d728afedad7a82e5d8f220b957" id="r_ae09ee9d728afedad7a82e5d8f220b957"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1MeshDataHandler.html#ae09ee9d728afedad7a82e5d8f220b957">getMaxCurvature</a> (<a class="el" href="namespaceCCTools.html#aa1eeed8449615d67dc8a25741514986f">MeshFieldComponent</a> field_component, const std::optional&lt; <a class="el" href="classCCTools_1_1Cube3D.html">Cube3D</a> &gt; &amp;filter_area=std::nullopt)</td></tr>
 <tr class="memdesc:ae09ee9d728afedad7a82e5d8f220b957"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum curvature of the magnet.  <br /></td></tr>
 <tr class="separator:ae09ee9d728afedad7a82e5d8f220b957"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd56f86d480b65b0b6e539cb6ec76b29" id="r_acd56f86d480b65b0b6e539cb6ec76b29"><td class="memItemLeft" align="right" valign="top">double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1MeshDataHandler.html#acd56f86d480b65b0b6e539cb6ec76b29">getMaxVonMises</a> ()</td></tr>
+<tr class="memdesc:acd56f86d480b65b0b6e539cb6ec76b29"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the maximum Von Mises pressure (MPa) in the model.  <br /></td></tr>
+<tr class="separator:acd56f86d480b65b0b6e539cb6ec76b29"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="inherit_header pub_methods_classCCTools_1_1CalcResultHandlerBase"><td colspan="2" onclick="javascript:toggleInherit('pub_methods_classCCTools_1_1CalcResultHandlerBase')"><img src="closed.png" alt="-"/>&#160;Public Member Functions inherited from <a class="el" href="classCCTools_1_1CalcResultHandlerBase.html">CCTools::CalcResultHandlerBase</a></td></tr>
 <tr class="memitem:ae34904357eb71fbcb5e2e178ac20a711 inherit pub_methods_classCCTools_1_1CalcResultHandlerBase" id="r_ae34904357eb71fbcb5e2e178ac20a711"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1CalcResultHandlerBase.html#ae34904357eb71fbcb5e2e178ac20a711">~CalcResultHandlerBase</a> ()</td></tr>
 <tr class="separator:ae34904357eb71fbcb5e2e178ac20a711 inherit pub_methods_classCCTools_1_1CalcResultHandlerBase"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -226,6 +229,26 @@ Public Member Functions</h2></td></tr>
   </dd>
 </dl>
 <p>Computes the curvature of of the magnet from the mesh, extracts the set field component and returns the maximum. If <code>filter_area</code> is set, the function will only consider curvature values from mesh nodes inside the specified area. </p>
+
+</div>
+</div>
+<a id="acd56f86d480b65b0b6e539cb6ec76b29" name="acd56f86d480b65b0b6e539cb6ec76b29"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd56f86d480b65b0b6e539cb6ec76b29">&#9670;&#160;</a></span>getMaxVonMises()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">double CCTools::MeshDataHandler::getMaxVonMises </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Get the maximum Von Mises pressure (MPa) in the model. </p>
+<dl class="section return"><dt>Returns</dt><dd>The maximum Von Mises pressure (MPa). </dd></dl>
 
 </div>
 </div>
