@@ -9,6 +9,8 @@ namespace CCTools
         {
             Logger::error("Failed to load model from JSON file.");
         }
+
+        json_file_path_ = json_file_path;
     }
 
     // dummy constructor - do not use
@@ -86,6 +88,15 @@ namespace CCTools
         }
 
         return true;
+    }
+
+    bool ModelCalculator::reload(){
+        if(json_file_path_.empty()){
+            Logger::error("No JSON file path set. Cannot reload model.");
+            return false;
+        }
+
+        return load_model(json_file_path_);
     }
 
     // Function to set the GPU settings for the calculation. Will do nothing when no GPU is available.

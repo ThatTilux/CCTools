@@ -44,6 +44,15 @@ namespace CCTools
         ModelCalculator();
 
         /**
+         * @brief Reload the model from the JSON file.
+         * @return `true` if the model was loaded successfully, `false` otherwise.
+         * 
+         * This function reloads the model from the JSON file and extracts re-extracts all objects from the JSON file.
+         * The path to the JSON file is the same as the one used in the constructor.
+         */
+        bool reload();
+
+        /**
          * @brief Run the harmonics calculation.
          * @param harmonics_handler HarmonicsDataHandler object to store the results.
          * @param disable_logging Flag to disable logging.
@@ -189,6 +198,11 @@ namespace CCTools
         std::string harmonics_calc_name_;
         std::string mesh_calc_name_;
         std::string harmonics_axis_name_;
+
+        /**
+         * @brief Path to the JSON file passed in the constructor.
+         */
+        boost::filesystem::path json_file_path_;
     };
 
 } // namespace CCTools
