@@ -4,7 +4,7 @@ var searchData=
   ['get_5fan_1',['get_an',['../classCCTools_1_1HarmonicsDataHandler.html#ab57635b9561bec6e5ae702029ad2e613',1,'CCTools::HarmonicsDataHandler']]],
   ['get_5faxis_5fell_2',['get_axis_ell',['../classCCTools_1_1ModelCalculator.html#a30a29f5cdfaac91cc0612c3bc439634c',1,'CCTools::ModelCalculator']]],
   ['get_5faxis_5fz_5fpos_3',['get_axis_z_pos',['../classCCTools_1_1ModelCalculator.html#a74c11cf4f671ad30139ee44b6053f105',1,'CCTools::ModelCalculator']]],
-  ['get_5fbn_4',['get_bn',['../classCCTools_1_1HarmonicsDataHandler.html#aaae4182a0df3c5231ea57ff0fa916ba2',1,'CCTools::HarmonicsDataHandler::get_Bn(int component)'],['../classCCTools_1_1HarmonicsDataHandler.html#a80ba20245e6e5bb457636b7c48eea2ef',1,'CCTools::HarmonicsDataHandler::get_bn()']]],
+  ['get_5fbn_4',['get_bn',['../classCCTools_1_1HarmonicsDataHandler.html#a80ba20245e6e5bb457636b7c48eea2ef',1,'CCTools::HarmonicsDataHandler::get_bn()'],['../classCCTools_1_1HarmonicsDataHandler.html#aaae4182a0df3c5231ea57ff0fa916ba2',1,'CCTools::HarmonicsDataHandler::get_Bn(int component)']]],
   ['get_5fmodel_5ftree_5',['get_model_tree',['../classCCTools_1_1ModelCalculator.html#a3fbb57f6069d57b225361f1efa10bdf3',1,'CCTools::ModelCalculator']]],
   ['getconstant_6',['getConstant',['../structCCTools_1_1HarmonicDriveParameters.html#af1cc34d4130ce3a13e7c3dd3530d8039',1,'CCTools::HarmonicDriveParameters']]],
   ['getharmonicdrivevalues_7',['getHarmonicDriveValues',['../classCCTools_1_1ModelHandler.html#a77adb591a0f0659e319663cac0f34a8f',1,'CCTools::ModelHandler']]],

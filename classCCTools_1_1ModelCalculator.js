@@ -9,6 +9,7 @@ var classCCTools_1_1ModelCalculator =
     [ "get_model_tree", "classCCTools_1_1ModelCalculator.html#a3fbb57f6069d57b225361f1efa10bdf3", null ],
     [ "has_harmonics_calc", "classCCTools_1_1ModelCalculator.html#a2cfddcd1ea8dd87f8cdfaffedfb959df", null ],
     [ "has_mesh_calc", "classCCTools_1_1ModelCalculator.html#a5eeea9111a25807c6d6364a46484baef", null ],
+    [ "reload", "classCCTools_1_1ModelCalculator.html#a8b247746177c5566591d777cf29ff8f9", null ],
     [ "reload_and_calc_harmonics", "classCCTools_1_1ModelCalculator.html#a80b99a07b7187ccf6ac8d83acdc5d71b", null ],
     [ "reload_and_calc_mesh", "classCCTools_1_1ModelCalculator.html#a0b5e522d702d3a4dd99e496aaea43bfc", null ]
 ];

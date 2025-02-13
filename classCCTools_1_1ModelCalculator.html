@@ -109,6 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:aafef5732deec900862753bd9f7758bc0" id="r_aafef5732deec900862753bd9f7758bc0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelCalculator.html#aafef5732deec900862753bd9f7758bc0">ModelCalculator</a> ()</td></tr>
 <tr class="memdesc:aafef5732deec900862753bd9f7758bc0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy constructor. Use parameterized constructor instead.  <br /></td></tr>
 <tr class="separator:aafef5732deec900862753bd9f7758bc0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b247746177c5566591d777cf29ff8f9" id="r_a8b247746177c5566591d777cf29ff8f9"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelCalculator.html#a8b247746177c5566591d777cf29ff8f9">reload</a> ()</td></tr>
+<tr class="memdesc:a8b247746177c5566591d777cf29ff8f9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reload the model from the JSON file.  <br /></td></tr>
+<tr class="separator:a8b247746177c5566591d777cf29ff8f9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae5845be29d6fd9bfee539619cfd0ec22" id="r_ae5845be29d6fd9bfee539619cfd0ec22"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelCalculator.html#ae5845be29d6fd9bfee539619cfd0ec22">calc_harmonics</a> (<a class="el" href="classCCTools_1_1HarmonicsDataHandler.html">HarmonicsDataHandler</a> &amp;harmonics_handler, bool disable_logging=true)</td></tr>
 <tr class="memdesc:ae5845be29d6fd9bfee539619cfd0ec22"><td class="mdescLeft">&#160;</td><td class="mdescRight">Run the harmonics calculation.  <br /></td></tr>
 <tr class="separator:ae5845be29d6fd9bfee539619cfd0ec22"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -362,6 +365,27 @@ Public Member Functions</h2></td></tr>
 
 <p>Check if a mesh calculation is available. </p>
 <dl class="section return"><dt>Returns</dt><dd><code>true</code> if a mesh calculation is available, <code>false</code> otherwise. </dd></dl>
+
+</div>
+</div>
+<a id="a8b247746177c5566591d777cf29ff8f9" name="a8b247746177c5566591d777cf29ff8f9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b247746177c5566591d777cf29ff8f9">&#9670;&#160;</a></span>reload()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool CCTools::ModelCalculator::reload </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reload the model from the JSON file. </p>
+<dl class="section return"><dt>Returns</dt><dd><code>true</code> if the model was loaded successfully, <code>false</code> otherwise.</dd></dl>
+<p>This function reloads the model from the JSON file and extracts re-extracts all objects from the JSON file. The path to the JSON file is the same as the one used in the constructor. </p>
 
 </div>
 </div>
