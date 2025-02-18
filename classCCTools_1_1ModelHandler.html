@@ -103,9 +103,9 @@ $(document).ready(function(){initNavTree('classCCTools_1_1ModelHandler.html','')
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6ec0cbd38c72f374896376cedd8ae51a" id="r_a6ec0cbd38c72f374896376cedd8ae51a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#a6ec0cbd38c72f374896376cedd8ae51a">ModelHandler</a> (const boost::filesystem::path &amp;json_file_path)</td></tr>
-<tr class="memdesc:a6ec0cbd38c72f374896376cedd8ae51a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCCTools_1_1ModelHandler.html" title="Class to manipulate a magnet model JSON file.">ModelHandler</a> object.  <br /></td></tr>
-<tr class="separator:a6ec0cbd38c72f374896376cedd8ae51a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94027797277fbf256900b4c67df907e5" id="r_a94027797277fbf256900b4c67df907e5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#a94027797277fbf256900b4c67df907e5">ModelHandler</a> (const boost::filesystem::path &amp;json_file_path, bool inplace=false)</td></tr>
+<tr class="memdesc:a94027797277fbf256900b4c67df907e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Construct a new <a class="el" href="classCCTools_1_1ModelHandler.html" title="Class to manipulate a magnet model JSON file.">ModelHandler</a> object.  <br /></td></tr>
+<tr class="separator:a94027797277fbf256900b4c67df907e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5749bbc1d4ef424b5f9d654c42c79041" id="r_a5749bbc1d4ef424b5f9d654c42c79041"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classCCTools_1_1ModelHandler.html#a5749bbc1d4ef424b5f9d654c42c79041">ModelHandler</a> ()</td></tr>
 <tr class="memdesc:a5749bbc1d4ef424b5f9d654c42c79041"><td class="mdescLeft">&#160;</td><td class="mdescRight">Dummy constructor. Use the parameterized constructor instead.  <br /></td></tr>
 <tr class="separator:a5749bbc1d4ef424b5f9d654c42c79041"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -132,8 +132,8 @@ Public Member Functions</h2></td></tr>
 <div class="textblock"><p>Class to manipulate a magnet model JSON file. </p>
 <p>Provides functions to extract and manipulate drive values for custom cct harmonics. </p>
 </div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="a6ec0cbd38c72f374896376cedd8ae51a" name="a6ec0cbd38c72f374896376cedd8ae51a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ec0cbd38c72f374896376cedd8ae51a">&#9670;&#160;</a></span>ModelHandler() <span class="overload">[1/2]</span></h2>
+<a id="a94027797277fbf256900b4c67df907e5" name="a94027797277fbf256900b4c67df907e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94027797277fbf256900b4c67df907e5">&#9670;&#160;</a></span>ModelHandler() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -142,8 +142,18 @@ Public Member Functions</h2></td></tr>
           <td class="memname">CCTools::ModelHandler::ModelHandler </td>
           <td>(</td>
           <td class="paramtype">const boost::filesystem::path &amp;&#160;</td>
-          <td class="paramname"><em>json_file_path</em></td><td>)</td>
+          <td class="paramname"><em>json_file_path</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">bool&#160;</td>
+          <td class="paramname"><em>inplace</em> = <code>false</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -151,11 +161,12 @@ Public Member Functions</h2></td></tr>
 <p>Construct a new <a class="el" href="classCCTools_1_1ModelHandler.html" title="Class to manipulate a magnet model JSON file.">ModelHandler</a> object. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">json_file_path</td><td>Path to the JSON file.</td></tr>
+    <tr><td class="paramname">json_file_path</td><td>Path to the JSON file. </td></tr>
+    <tr><td class="paramname">inplace</td><td>Flag to indicate whether to modify the JSON file in place. Defaults to false.</td></tr>
   </table>
   </dd>
 </dl>
-<p>This constructor copies the JSON file to a temporary folder. All changes inside this class are only made to the temporary file, the original file remains untouched. Path to the temporary JSON file can be accessed using <code><a class="el" href="classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290" title="Get the file path of the temporary model file.">getTempJsonPath()</a></code>. </p>
+<p>This constructor copies the JSON file to a temporary folder. All changes inside this class are only made to the temporary file, the original file remains untouched. Path to the temporary JSON file can be accessed using <code><a class="el" href="classCCTools_1_1ModelHandler.html#a1baaffc16d6a00699ac7ab0d02558290" title="Get the file path of the temporary model file.">getTempJsonPath()</a></code>. If <code>inplace</code> is set to true, the JSON file will be modified in place and thus all modifications are permanent. </p>
 
 </div>
 </div>
