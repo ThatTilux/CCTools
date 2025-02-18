@@ -54,11 +54,13 @@ namespace CCTools
         /**
          * @brief Construct a new ModelHandler object.
          * @param json_file_path Path to the JSON file.
+         * @param inplace Flag to indicate whether to modify the JSON file in place. Defaults to false.
          *
          * This constructor copies the JSON file to a temporary folder. All changes inside this class are only made to the temporary file, the original file remains untouched.
          * Path to the temporary JSON file can be accessed using `getTempJsonPath()`.
+         * If `inplace` is set to true, the JSON file will be modified in place and thus all modifications are permanent.
          */
-        ModelHandler(const boost::filesystem::path &json_file_path);
+        ModelHandler(const boost::filesystem::path &json_file_path, bool inplace=false);
 
         /**
          * @brief Dummy constructor. Use the parameterized constructor instead.

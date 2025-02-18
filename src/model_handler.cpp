@@ -5,9 +5,13 @@ namespace CCTools
 {
 
     // Constructor
-    ModelHandler::ModelHandler(const boost::filesystem::path &json_file_path)
+    ModelHandler::ModelHandler(const boost::filesystem::path &json_file_path, bool inplace)
     {
-        createTemporaryFolder(json_file_path);
+        if(inplace){
+            temp_json_path_ = json_file_path;
+        } else {
+            createTemporaryFolder(json_file_path);
+        }
     }
 
     // dummy constructor
