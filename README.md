@@ -1,17 +1,17 @@
 # CCTools
+The CCTools Library in C++ serves as an interface between the [RAT-Library](https://gitlab.com/Project-Rat) (the underlying library of the closed-source licensed [RAT-GUI](https://rat-gui.com/index.html) software) and any C++ software performing computations on canted-cosine-theta (CCT) magnet models defined in JSON. CCTools provides user-friendly classes that facilitate the usage of the RAT-Library. This library has two main functionalities, as presented in the following.
 
-The CCTools Library in C++ serves as an interface between the [RAT-Library](https://gitlab.com/Project-Rat) and any C++ software performing computations on canted-cosine-theta (CCT) magnet models defined in JSON. CCTools provides user-friendly classes for manipulating magnet models and running simulations using the RAT-Library.
-This library can be used for CCT magnet models in the JSON format created by the [RAT-GUI](https://rat-gui.com/index.html) or RAT-Library.
+### JSON File Manipulation
+Magnet model files created using the RAT-GUI software are saved in the JSON format. 
+CCTools is intended to work with these serialized JSON magnet model files. However, the RAT-Library does not provide seamless user-friendly functionalities to manipulate _existing_ magnet model files. Rather, it focuses on creating new magnet models programmatically from scratch. 
+To address this, the CCTools library provides user-friendly functionality through the `ModelHandler` class to programmatically manipulate JSON magnet models by editing the underlying JSON file.
+
+
+### Simulation Handlers
+In the RAT-GUI, results of any simulation are presented in a convenient fashion. The RAT-Library does not provide these convenient results but the raw data resulting from the simulation. 
+To facilitate the use of the RAT-Library, CCTools provides the `ModelCalculator` class to run any simulation. The results are returned in user-friendly handler classes, e.g., as a `CCTools::HarmonicsDataHandler` object for the result of a harmonics calculation. This object provides functions to retrieve the same information displayed in the RAT-GUI, e.g., `HarmonicsDataHandler::get_bn` to retrieve the vector of the 10 bn values from a harmonics calculation.
 
 This project is part of the FCC-ee HTS4 research project at CERN.
-
-## Features
-
-### Main Classes
-
-- **ModelHandler**: Provides functions to manipulate a magnet model JSON file, including extracting and modifying drive values for custom CCT harmonics.
-
-- **ModelCalculator**: Runs computations on a magnet model, including harmonics and mesh calculations, providing results through simplified handler classes.
 
 ## Documentation
 The documentation of this library can be viewed [here](https://thattilux.github.io/CCTools/).
@@ -46,7 +46,7 @@ Before using CCTools, ensure that your system meets the following requirements.
 
 #### RAT-Library
 Follow the [RAT documentation](https://gitlab.com/Project-Rat/rat-documentation) to install the RAT library. This may take a while.
-- When a CUDA compatible GPU is available, make sure to follow the steps for installing CUDA. This is highly recommended as it reduces the runtime of this software by some orders of magnitude.
+- When a CUDA-compatible GPU is available, make sure to follow the steps for installing CUDA. This is highly recommended as it reduces the runtime of this software by some orders of magnitude.
 - When using CUDA with WSL, it is advised to increase the allocated memory for WSL, see [here](https://geronimo-bergk.medium.com/optimizing-wsl2-performance-setting-memory-and-cpu-allocation-on-windows-513eba7b6086).
 
 
