@@ -117,7 +117,7 @@ Please note that this step is  **not required** to use this library in your C++ 
 ## Author
 
 Ole Kuhlmann  
-Email: [tim.ole.kuhlmann@cern.ch](mailto:tim.ole.kuhlmann@cern.ch)  
+Email: [ole.kuhlmann@rwth-aachen.de](mailto:ole.kuhlmann@rwth-aachen.de)  
 GitHub: [ThatTilux](https://github.com/ThatTilux)
 
 ## License
